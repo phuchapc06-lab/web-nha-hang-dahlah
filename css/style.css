@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
 
   /* Because we want header to be sticky later */
   height: 9.6rem;
@@ -18,6 +18,55 @@
   height: 8.4rem;
   width: auto;
 }
+.logo-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.15;
+}
+
+.logo-brand .brand-name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #991b1b;
+  text-transform: uppercase;
+}
+
+.logo-brand .brand-sub {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #767676;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.footer-logo-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: 2.4rem;
+  line-height: 1.15;
+}
+
+.footer-logo-brand .brand-name {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #991b1b;
+  text-transform: uppercase;
+}
+
+.footer-logo-brand .brand-sub {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
 
 /**************************/
 /* NAVIGATION */
@@ -46,7 +95,7 @@
 
 .main-nav-link:hover,
 .main-nav-link:active {
-  color: #cf711f;
+  color: #991b1b;
 }
 
 .main-nav-link.nav-cta:link,
@@ -54,12 +103,12 @@
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
   color: #fff;
-  background-color: #e67e22;
+  background-color: #c82333;
 }
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-  background-color: #cf711f;
+  background-color: #991b1b;
 }
 
 /* MOBILE */
@@ -104,7 +153,7 @@
 /**************************/
 
 .section-hero {
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   padding: 4.8rem 0 9.6rem 0;
 }
 
@@ -144,7 +193,7 @@
   width: 4.8rem;
   border-radius: 50%;
   margin-right: -1.6rem;
-  border: 3px solid #fdf2e9;
+  border: 3px solid #f8fafc;
 }
 
 .delivered-imgs img:last-child {
@@ -157,7 +206,7 @@
 }
 
 .delivered-text span {
-  color: #cf711f;
+  color: #991b1b;
   font-weight: 700;
 }
 
@@ -207,14 +256,14 @@
   /* 60% of parent's width */
   padding-bottom: 60%;
 
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   z-index: -2;
 }
 
 .step-img-box::after {
   width: 45%;
   padding-bottom: 45%;
-  background-color: #fae5d3;
+  background-color: #fee2e2;
   z-index: -1;
 }
 
@@ -297,7 +346,7 @@
 .meal-icon {
   height: 2.4rem;
   width: 2.4rem;
-  color: #e67e22;
+  color: #c82333;
 }
 
 .meal-img {
@@ -314,7 +363,7 @@
 /**************************/
 
 .section-testimonials {
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   display: grid;
   grid-template-columns: 55fr 45fr;
   align-items: center;
@@ -385,12 +434,12 @@
 
 .pricing-plan--starter {
   justify-self: end;
-  border: 2px solid #fdf2e9;
+  border: 2px solid #f8fafc;
   padding: 4.6rem;
 }
 
 .pricing-plan--complete {
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   padding: 4.8rem;
   position: relative;
   overflow: hidden;
@@ -417,7 +466,7 @@
 }
 
 .plan-name {
-  color: #cf711f;
+  color: #991b1b;
   font-weight: 600;
   font-size: 2rem;
   text-transform: uppercase;
@@ -426,7 +475,7 @@
 }
 
 .plan-price {
-  font-size: 6.2rem;
+  font-size: 4.4rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 1.6rem;
@@ -456,10 +505,10 @@
 }
 
 .feature-icon {
-  color: #e67e22;
+  color: #c82333;
   height: 3.2rem;
   width: 3.2rem;
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   margin-bottom: 3.2rem;
   padding: 1.6rem;
   border-radius: 50%;
@@ -493,21 +542,21 @@
   display: grid;
   /* 2/3 = 66.6% + 1/3 = 33.3% */
   grid-template-columns: 2fr 1fr;
-  /* background-color: #e67e22; */
+  /* background-color: #c82333; */
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
 
-  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  background-image: linear-gradient(to right bottom, #dc2626, #c82333);
   overflow: hidden;
 }
 
 .cta-text-box {
   padding: 4.8rem 6.4rem 6.4rem 6.4rem;
-  color: #45260a;
+  color: #111827;
 }
 
 .cta .heading-secondary {
-  /* color: #45260a; */
+  /* color: #111827; */
   color: inherit;
   margin-bottom: 3.2rem;
 }
@@ -552,7 +601,7 @@
   font-family: inherit;
   color: inherit;
   border: none;
-  background-color: #fdf2e9;
+  background-color: #f8fafc;
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -641,4 +690,646 @@
 .footer-link:hover,
 .footer-link:active {
   color: #555;
+}
+
+/* ========================================================== */
+/* THIẾT KẾ SANG TRỌNG CHUẨN FINE DINING CHÂU ÂU KRON-DAHLAH */
+/* BẢNG MÀU: TRẮNG SỨ, ĐỎ BORDEAUX, ĐEN HOÀNG GIA, GHI XÁM */
+/* ========================================================== */
+
+/* Typography cao cấp */
+.heading-primary,
+.heading-secondary,
+.booking-title,
+.meal-title,
+.plan-name,
+.brand-name {
+  font-family: "Playfair Display", Georgia, serif !important;
+}
+
+/* Header sang trọng, sáng sủa */
+.header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.logo-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.15;
+}
+
+.logo-brand .brand-name {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: #991b1b !important; /* Đỏ rượu vang Bordeaux quý tộc */
+  text-transform: uppercase;
+}
+
+.logo-brand .brand-sub {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #4b5563; /* Ghi than sang trọng */
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #1f2937 !important; /* Ghi đen sắc sảo */
+  font-weight: 600;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #991b1b !important; /* Đỏ rượu khi hover */
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #991b1b !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+  padding: 1.2rem 2.6rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(153, 27, 27, 0.25);
+  transition: all 0.3s;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #7f1d1d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(153, 27, 27, 0.35);
+}
+
+/* Hero Section: Nền sáng ngọc trai / Alabaster ấm cúng, làm bật đĩa bít tết & món ăn */
+.section-hero {
+  background: linear-gradient(140deg, #fcfbf9 0%, #f5f3ec 100%) !important;
+  border-bottom: 1px solid #e9e5dc;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.section-hero .heading-primary {
+  color: #111827 !important;
+  font-size: 5rem;
+  line-height: 1.15;
+  margin-bottom: 2.4rem;
+}
+
+.section-hero .heading-primary .highlight-accent {
+  color: #991b1b;
+}
+
+.section-hero .heading-primary .brand-highlight {
+  color: #991b1b;
+  font-style: italic;
+}
+
+.section-hero .hero-description {
+  color: #475569 !important;
+  font-size: 1.85rem;
+  line-height: 1.65;
+  margin-bottom: 3.6rem;
+}
+
+.section-hero .delivered-text {
+  color: #475569 !important;
+  font-size: 1.5rem;
+}
+
+.section-hero .delivered-text span {
+  color: #991b1b !important;
+  font-weight: 800;
+}
+
+.section-hero .btn--full:link,
+.section-hero .btn--full:visited {
+  background-color: #991b1b !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(153, 27, 27, 0.3) !important;
+}
+
+.section-hero .btn--full:hover,
+.section-hero .btn--full:active {
+  background-color: #7f1d1d !important;
+  transform: translateY(-2px);
+}
+
+.section-hero .btn--outline:link,
+.section-hero .btn--outline:visited {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  border: 1.5px solid #cbd5e1 !important;
+}
+
+.section-hero .btn--outline:hover,
+.section-hero .btn--outline:active {
+  background-color: #f8fafc !important;
+  border-color: #991b1b !important;
+  color: #991b1b !important;
+}
+
+/* Khung ảnh Hero nổi bật món ăn */
+.hero-img {
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
+  transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.02);
+}
+
+/* Section How it works */
+.section-how {
+  background-color: #ffffff !important;
+}
+
+.section-how .subheading,
+.section-meals .subheading,
+.section-pricing .subheading,
+.section-testimonials .subheading {
+  color: #991b1b !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Category Filter Tabs (Mẫu ảnh 1 - Thanh lịch, dễ nhìn) */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 4.8rem;
+  flex-wrap: wrap;
+}
+
+.menu-tab-btn {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1.5px solid #cbd5e1;
+  padding: 1rem 2.4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.menu-tab-btn.active,
+.menu-tab-btn:hover {
+  background-color: #991b1b !important;
+  border-color: #991b1b !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(153, 27, 27, 0.35);
+}
+
+/* Thẻ món ăn và huy hiệu giảm giá (Mẫu ảnh 1) */
+.section-meals {
+  background: #faf9f6 !important;
+}
+
+.meal {
+  position: relative;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s ease;
+}
+
+.meal:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.meal-title {
+  color: #111827 !important;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background-color: #991b1b;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(153, 27, 27, 0.4);
+  border: 2px dashed #ffffff;
+  z-index: 2;
+}
+
+/* Promo Advertising Grid (Mẫu ảnh 1 - Phối màu sang trọng) */
+.promo-section-container {
+  margin-top: 6.4rem;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 3.2rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+}
+
+.promo-card--wine {
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+  color: #ffffff;
+  border: none;
+}
+
+.promo-card--wine .promo-card-desc {
+  color: #fecaca;
+}
+
+.promo-card--wine .promo-card-link {
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.promo-card--dark {
+  background: #18181b;
+  color: #ffffff;
+  border: 1px solid #3f3f46;
+}
+
+.promo-card--dark .promo-card-desc {
+  color: #94a3b8;
+}
+
+.promo-card--dark .promo-card-link {
+  color: #ef4444;
+}
+
+.promo-card--light {
+  background: #ffffff;
+  color: #111827;
+  border: 1.5px solid #e2e8f0;
+}
+
+.promo-card--light .promo-card-title {
+  color: #111827 !important;
+}
+
+.promo-card--light .promo-card-desc {
+  color: #475569;
+}
+
+.promo-card--light .promo-card-link {
+  color: #991b1b;
+}
+
+.promo-tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.4rem;
+}
+
+.promo-tag--gold {
+  background: #b45309;
+  color: #ffffff;
+}
+
+.promo-tag--red {
+  background: #991b1b;
+  color: #ffffff;
+}
+
+.promo-tag--dark {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+.promo-card-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.promo-card-desc {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.promo-card-link {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.6rem;
+}
+
+/* Section Pricing (Set Menu) */
+.section-pricing {
+  background: #ffffff !important;
+}
+
+.pricing-plan {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-plan--starter {
+  border: 1.5px solid #e2e8f0;
+}
+
+.pricing-plan--complete {
+  border: 2.5px solid #991b1b;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(153, 27, 27, 0.12);
+}
+
+.pricing-plan--complete .plan-name {
+  color: #991b1b;
+}
+
+/* Floating Booking Card (Mẫu ảnh 2) */
+.section-cta {
+  padding: 8.8rem 0;
+  background-color: #1e2229;
+  background-image: linear-gradient(rgba(24, 28, 36, 0.86), rgba(24, 28, 36, 0.86)), url('../img/eating.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.booking-card {
+  background: #ffffff !important;
+  border-radius: 16px;
+  padding: 4.8rem 5.6rem;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid #e2e8f0;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.booking-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.booking-subtitle {
+  font-size: 1.6rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.booking-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 2.8rem;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.booking-field label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.booking-field input,
+.booking-field select {
+  width: 100%;
+  padding: 1.3rem 1.6rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: #111827;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  transition: all 0.2s;
+}
+
+.booking-field input:focus,
+.booking-field select:focus {
+  outline: none;
+  border-color: #991b1b;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(153, 27, 27, 0.15);
+}
+
+.booking-field--full {
+  grid-column: 1 / -1;
+}
+
+.btn-booking {
+  background-color: #991b1b;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 1.2rem;
+  box-shadow: 0 8px 20px rgba(153, 27, 27, 0.35);
+}
+
+.btn-booking:hover {
+  background-color: #7f1d1d;
+  box-shadow: 0 12px 24px rgba(153, 27, 27, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Secondary Promo Bar (Mẫu ảnh 2) */
+.sub-promo-bar {
+  margin-top: 3.2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.4rem 3.6rem;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sub-promo-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin-bottom: 1.4rem;
+}
+
+.btn-promo-action {
+  display: inline-block;
+  background-color: #991b1b;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1.2rem 3.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.btn-promo-action:hover {
+  background-color: #7f1d1d;
+  transform: translateY(-2px);
+}
+
+/* Footer sang trọng */
+.footer {
+  background-color: #111827;
+  color: #94a3b8;
+  border-top: 1px solid #1f2937;
+}
+
+.footer .brand-name {
+  color: #ef4444 !important;
+}
+
+.footer .brand-sub {
+  color: #94a3b8 !important;
+}
+
+.footer-heading {
+  color: #ffffff;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  color: #cbd5e1;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #ef4444;
+}
+
+/* Modal Popup xác nhận thành công */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3.6rem 4.4rem;
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+.modal-icon {
+  font-size: 6.4rem;
+  color: #16a34a;
+  margin-bottom: 1.2rem;
+}
+
+.modal-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.modal-body {
+  font-size: 1.5rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+  text-align: left;
+  background: #f8fafc;
+  padding: 1.6rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-modal-close {
+  background-color: #991b1b;
+  color: #ffffff;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1.2rem 3.2rem;
+  border-radius: 8px;
+  cursor: pointer;
 }

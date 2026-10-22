@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Soulfood là dịch vụ đăng ký suất ăn ứng dụng trí tuệ nhân tạo (AI), giúp bạn tìm lại thói quen ăn uống lành mạnh suốt 365 ngày trong năm. Các bữa ăn được thiết kế riêng để hoàn toàn phù hợp với khẩu vị và nhu cầu dinh dưỡng của cá nhân bạn"
-    />
+    <meta name="description" content="Nhà hàng Kron-Dahlah - Đỉnh cao ẩm thực Tây và bít tết bò thượng hạng tại Việt Nam. Không gian lãng mạn, menu phong phú, các set combo tiệc hấp dẫn cùng dịch vụ đặt bàn trực tuyến tiện lợi." />
     <!--Hãy luôn bao gồm dòng này trong mã code vì nó rất quan trọng trong thiết kế đáp ứng -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,7 +11,12 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -39,28 +41,29 @@
     ></script>
     <script defer src="js/script.js"></script>
 
-    <title>SoulFood</title>
+    <title>Kron-Dahlah | Nhà Hàng Ẩm Thực Tây & Bít Tết Châu Âu Cao Cấp</title>
   </head>
   <body>
     <header class="header">
-      <a href="#">
-        <img class="logo" alt="Soulfood logo" src="img/soulfood.png" />
+      <a href="#" class="logo-brand">
+        <span class="brand-name">Kron-Dahlah</span>
+        <span class="brand-sub">Steakhouse & Western Dining</span>
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#how">How it works</a></li>
-          <li><a class="main-nav-link" href="#meals">Meals</a></li>
+          <li><a class="main-nav-link" href="#how">Trải nghiệm</a></li>
+          <li><a class="main-nav-link" href="#meals">Thực đơn</a></li>
           <li>
-            <a class="main-nav-link" href="#testimonials">Testimonials</a>
+            <a class="main-nav-link" href="#testimonials">Đánh giá</a>
           </li>
-          <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="main-nav-link nav-cta" href="#cta">Try for free</a></li>
+          <li><a class="main-nav-link" href="#pricing">Set Menu tiệc</a></li>
+          <li><a class="main-nav-link nav-cta" href="#cta">Đặt bàn ngay</a></li>
         </ul>
       </nav>
 <!-- button for mobile -->
       <button class="btn-mobile-nav">
-        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon> <!--menu icon-->
-        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon> <!--close icon-->
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
       </button>
     </header>
 
@@ -69,17 +72,15 @@
         <div class="hero">
           <div class="hero-text-box">
             <h1 class="heading-primary">
-              A healthy meal delivered to your door, every single day
+              Tinh hoa Ẩm thực Tây &amp; <span class="highlight-accent">Bít tết Thượng hạng</span> tại <span class="brand-highlight">Kron-Dahlah</span>
             </h1>
             <p class="hero-description">
-              Gói đăng ký bữa ăn thông minh 365 ngày giúp bạn duy trì chế độ ăn
-              uống lành mạnh mỗi ngày, được cá nhân hóa theo khẩu vị và nhu cầu
-              dinh dưỡng riêng.
+              Thưởng thức các món bít tết bò Wagyu hảo hạng, mỳ Ý thủ công sốt kem nấm Truffle thơm ngậy cùng bộ sưu tập rượu vang châu Âu trứ danh trong không gian kiến trúc hoàng gia lãng mạn giữa lòng Việt Nam.
             </p>
             <a href="#cta" class="btn btn--full margin-right-sm"
-              >Start eating well</a
+              >Đặt bàn tiệc ngay</a
             >
-            <a href="#how" class="btn btn--outline">Learn more &darr;</a>
+            <a href="#meals" class="btn btn--outline">Khám phá Thực đơn &darr;</a>
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img src="img/customers/customer-1.jpg" alt="Customer photo" />
@@ -90,7 +91,7 @@
                 <img src="img/customers/customer-6.jpg" alt="Customer photo" />
               </div>
               <p class="delivered-text">
-                Đã phục vụ hơn <span>250.000</span> bữa ăn trong năm qua!
+                Hơn <span>50.000+</span> thực khách hài lòng & đánh giá 5 sao!
               </p>
             </div>
           </div>
@@ -106,9 +107,9 @@
 
       <section class="section-how" id="how">
         <div class="container">
-          <span class="subheading">How it works</span>
+          <span class="subheading">Trải nghiệm ẩm thực</span>
           <h2 class="heading-secondary">
-            Dinh dưỡng mỗi ngày chỉ với 3 bước đơn giản
+            3 Bước tận hưởng bữa tiệc hoàn hảo tại Kron-Dahlah
           </h2>
         </div>
 
@@ -117,19 +118,17 @@
           <div class="step-text-box">
             <p class="step-number">01</p>
             <h3 class="heading-tertiary">
-              Thiết lập khẩu vị riêng: Món bạn yêu và món cần tránh.
+              Đặt bàn trực tuyến & Lựa chọn không gian tiệc theo phong cách riêng
             </h3>
             <p class="step-description">
-              Đừng lãng phí thời gian suy nghĩ thực đơn. Soulfood AI sẽ thay bạn
-              xây dựng kế hoạch ăn uống cá nhân hóa 100% hàng tuần. Đảm bảo
-              chuẩn xác về dinh dưỡng và vitamin cho mọi mục tiêu sức khỏe.
+              Chỉ với 1 phút đặt bàn trực tuyến: bạn có thể chọn bàn hẹn hò lãng mạn nến hoa lung linh cho cặp đôi, bàn tiệc gia đình ấm cúng hoặc phòng VIP sang trọng tiếp đón đối tác ngoại giao.
             </p>
           </div>
           <div class="step-img-box">
             <img
               src="img/app/app-screen-1.png"
               class="step-img"
-              alt="Màn hình chọn các tùy chọn cài đặt trong ứng dụng trên iPhone"
+              alt="Màn hình đặt bàn trực tuyến trên điện thoại"
             />
           </div>
 
@@ -138,19 +137,16 @@
             <img
               src="img/app/app-screen-2.png"
               class="step-img"
-              alt="Màn hình phê duyệt kế hoạch bữa ăn trong ứng dụng iPhone"
+              alt="Màn hình chọn thực đơn món Âu"
             />
           </div>
           <div class="step-text-box">
             <p class="step-number">02</p>
             <h3 class="heading-tertiary">
-              Phê duyệt thực đơn cá nhân hóa của bạn
+              Lựa chọn Set Menu thượng hạng hoặc món A La Carte
             </h3>
             <p class="step-description">
-              Kiểm soát lộ trình ăn uống thông minh: Mỗi tuần, bạn chỉ cần xác
-              nhận thực đơn từ Soulfood AI. Hệ thống cho phép bạn tùy biến mọi
-              thứ: từ thay đổi nguyên liệu đến việc thêm vào những món ăn yêu
-              thích của riêng bạn.
+              Khám phá thực đơn phong phú từ các món khai vị tinh tế, bít tết bò Wagyu nhập khẩu chuẩn nhiệt độ chín, mỳ Ý thủ công sốt kem Truffle cho đến các món tráng miệng chuẩn Pháp do Bếp trưởng quốc tế sáng tạo.
             </p>
           </div>
 
@@ -158,20 +154,17 @@
           <div class="step-text-box">
             <p class="step-number">03</p>
             <h3 class="heading-tertiary">
-              Tùy chọn thời gian nhận hàng linh hoạt
+              Thưởng thức tiệc Âu cùng dịch vụ chuẩn quý tộc 5 sao
             </h3>
             <p class="step-description">
-              Mỗi ngày, những đầu bếp hàng đầu sẽ chuẩn bị bữa ăn bạn đã chọn,
-              và chúng tôi sẽ giao đến tận cửa vào bất kỳ khung giờ nào thuận
-              tiện nhất. Bạn hoàn toàn có thể chủ động thay đổi thời gian và địa
-              chỉ nhận hàng mỗi ngày ngay trên hệ thống.
+              Đội ngũ nhân viên phục vụ chu đáo theo đúng nghi thức ẩm thực châu Âu, tư vấn kết hợp rượu vang (Wine pairing) hoàn hảo và hỗ trợ setup bàn tiệc kỷ niệm, sinh nhật hoàn toàn miễn phí.
             </p>
           </div>
           <div class="step-img-box">
             <img
               src="img/app/app-screen-3.png"
               class="step-img"
-              alt="Màn hình giao hàng trong ứng dụng iPhone"
+              alt="Trải nghiệm không gian tiệc sang trọng tại nhà hàng"
             />
           </div>
         </div>
@@ -179,135 +172,188 @@
 
       <section class="section-meals" id="meals">
         <div class="container center-text">
-          <span class="subheading">Bữa ăn</span>
+          <span class="subheading">Thực đơn đặc sắc</span>
           <h2 class="heading-secondary">
-            Soulfood AI chọn từ hơn 5.000 công thức nấu ăn
+            Tuyển chọn ẩm thực Tây & Bít tết từ Bếp trưởng
           </h2>
+          <!-- Menu Filter Tabs (Mẫu ảnh 1) -->
+          <div class="menu-tabs">
+            <button class="menu-tab-btn active" data-filter="all">Tất cả</button>
+            <button class="menu-tab-btn" data-filter="steak">Bít tết Wagyu</button>
+            <button class="menu-tab-btn" data-filter="pasta">Mỳ Ý &amp; Cơm</button>
+            <button class="menu-tab-btn" data-filter="seafood">Hải sản Âu</button>
+            <button class="menu-tab-btn" data-filter="combo">Set Combo tiệc</button>
+            <button class="menu-tab-btn" data-filter="wine">Vang &amp; Tráng miệng</button>
+          </div>
         </div>
 
         <div class="container grid grid--3-cols margin-bottom-md">
+          <!-- Món 1 -->
           <div class="meal">
+            <div class="discount-badge">-15%</div>
             <img
               src="img/meals/meal-1.jpg"
               class="meal-img"
-              alt="Bún Bò Huế"
+              alt="Bò Bít Tết Thăn Ngoại Wagyu Úc"
               width="700"
             />
             <div class="meal-content">
               <div class="meal-tags">
-                <span class="tag tag--vegetarian">Tăng cơ-Giàu đạm</span>
+                <span class="tag tag--vegetarian">Bán chạy nhất</span>
+                <span class="tag tag--paleo">Signature</span>
               </div>
-              <p class="meal-title">Bún bò Huế</p>
+              <p class="meal-title">Thăn Bò Bít Tết Wagyu Úc (Striploin)</p>
               <ul class="meal-attributes">
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                  <span><strong>650</strong> calories</span>
+                  <span>Bò Wagyu thượng hạng <strong>vân mỡ MB5+</strong></span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon
                     class="meal-icon"
                     name="restaurant-outline"
                   ></ion-icon>
-                  <span>NutriScore &reg; <strong>74</strong></span>
+                  <span>Sốt tiêu đen Phú Quốc &amp; Sốt Truffle</span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                  <span><strong>4.9</strong> rating (537)</span>
+                  <span><strong>4.9</strong> rating (1.250 đánh giá)</span>
                 </li>
               </ul>
+              <div style="margin-top: 1.6rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;">480.000₫</span>
+                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;">565.000₫</span>
+              </div>
             </div>
           </div>
 
+          <!-- Món 2 -->
           <div class="meal">
-            <img src="img/meals/meal-2.jpg" class="meal-img" alt="Pasta" />
+            <div class="discount-badge">-20%</div>
+            <img src="img/meals/meal-2.jpg" class="meal-img" alt="Mỳ Ý Tôm Hùm Sốt Truffle" />
             <div class="meal-content">
               <div class="meal-tags">
-                <span class="tag tag--vegan">Eat clean</span>
-                <span class="tag tag--paleo">Giàu đạm</span>
+                <span class="tag tag--vegan">Đặc sản Bếp trưởng</span>
+                <span class="tag tag--paleo">Fine Dining</span>
               </div>
-              <p class="meal-title">Pasta</p>
+              <p class="meal-title">Mỳ Ý Tôm Hùm Sốt Kem Truffle</p>
               <ul class="meal-attributes">
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                  <span><strong>700</strong> calories</span>
+                  <span>Tôm hùm baby &amp; Phô mai <strong>Parmigiano 24M</strong></span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon
                     class="meal-icon"
                     name="restaurant-outline"
                   ></ion-icon>
-                  <span>NutriScore &reg; <strong>92</strong></span>
+                  <span>Sợi mỳ thủ công sốt kem nấm Truffle Ý</span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                  <span><strong>4.8</strong> rating (441)</span>
+                  <span><strong>4.9</strong> rating (980 đánh giá)</span>
                 </li>
               </ul>
+              <div style="margin-top: 1.6rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;">360.000₫</span>
+                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;">450.000₫</span>
+              </div>
             </div>
           </div>
 
+          <!-- Danh mục thực đơn -->
           <div class="diets">
-            <h3 class="heading-tertiary">Đáp ứng mọi nhu cầu ăn uống:</h3>
+            <h3 class="heading-tertiary">Danh mục món ăn tại Kron-Dahlah:</h3>
             <ul class="list">
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Ăn chay trường</span>
+                <span>Khai vị: Súp bí đỏ bơ tỏi, Salad cá hồi</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Ăn chay linh hoạt</span>
+                <span>Bít tết bò Mỹ &amp; Wagyu Úc thượng hạng</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Ít tinh bột</span>
+                <span>Hải sản Âu: Cá hồi Na Uy áp chảo sốt bơ chanh</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Cơm nhà truyền thống</span>
+                <span>Mỳ &amp; Cơm Ý: Truffle Spaghetti, Risotto hải sản</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Dễ tiêu hóa</span>
+                <span>Sườn cừu New Zealand nướng thảo mộc</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Healthy & Eat Clean</span>
+                <span>Món chay kiểu Âu (Vegetarian European)</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Tăng cơ - Giàu đạm</span>
+                <span>Tráng miệng Pháp: Tiramisu, Crème Brûlée</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Thực đơn cho bé</span>
+                <span>Bộ sưu tập rượu vang Pháp, Ý, Chile cao cấp</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="container all-recipes">
-          <a href="#" class="link">See all recipes &rarr;</a>
+        <!-- Banner quảng cáo Hot Deals (Mẫu ảnh 1) -->
+        <div class="container promo-section-container">
+          <div class="promo-grid">
+            <div class="promo-card promo-card--wine">
+              <div>
+                <span class="promo-tag promo-tag--gold">Save 20% Off</span>
+                <h4 class="promo-card-title">Ưu Đãi Đặt Bàn Trước</h4>
+                <p class="promo-card-desc">Áp dụng từ Thứ 2 đến Thứ 5 hàng tuần cho tất cả các set bít tết bò Wagyu.</p>
+              </div>
+              <a href="#cta" class="promo-card-link">Đặt bàn giữ chỗ &rarr;</a>
+            </div>
+
+            <div class="promo-card promo-card--dark">
+              <div>
+                <span class="promo-tag promo-tag--red">Hot Deal!</span>
+                <h4 class="promo-card-title">Tặng Vang Đỏ Chile</h4>
+                <p class="promo-card-desc">Tặng ngay 01 chai vang đỏ Chile thượng hạng khi đặt trước Set tiệc Royal Gourmet.</p>
+              </div>
+              <a href="#pricing" class="promo-card-link">Xem chi tiết Set &rarr;</a>
+            </div>
+
+            <div class="promo-card promo-card--light">
+              <div>
+                <span class="promo-tag promo-tag--dark">Free Décor Tiệc</span>
+                <h4 class="promo-card-title">Setup Nến &amp; Hoa Tươi</h4>
+                <p class="promo-card-desc">Miễn phí 100% trang trí bàn hẹn hò lãng mạn nến hoa hoặc tiệc sinh nhật sang trọng.</p>
+              </div>
+              <a href="#cta" class="promo-card-link">Nhận ưu đãi ngay &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container all-recipes" style="margin-top: 4.8rem;">
+          <a href="#pricing" class="link">Khám phá các Set Menu tiệc &rarr;</a>
         </div>
       </section>
 
       <section class="section-testimonials" id="testimonials">
         <div class="testimonials-container">
-          <span class="subheading">Testimonials</span>
+          <span class="subheading">Đánh giá từ thực khách</span>
           <h2 class="heading-secondary">
-            Trải nghiệm khiến bạn muốn quay lại mỗi ngày
+            Cảm nhận của thực khách khi trải nghiệm tại Kron-Dahlah
           </h2>
 
           <div class="testimonials">
             <figure class="testimonial">
               <img
                 class="testimonial-img"
-                alt="bức ảnh về khách hàng Sơn Tùng"
+                alt="Khách hàng Sơn Tùng"
                 src="img/customers/sontung.jpg"
               />
               <blockquote class="testimonial-text">
-                Bữa ăn ngon – lành mạnh – giá “hạt dẻ”, lại chẳng cần tự tay đặt
-                món… cứ chill thôi, mọi thứ đã có Soulfood AI lo hết. Cảm giác
-                đúng kiểu “mê thật sự”, nhẹ nhàng mà cuốn.
+                Không gian tại Kron-Dahlah cực kỳ sang trọng và ấm cúng. Món bít tết Wagyu nướng vừa chín tới, mọng nước và mềm tan, sốt nấm Truffle thơm nức. Một địa điểm tuyệt vời cho những dịp đặc biệt!
               </blockquote>
               <p class="testimonial-name">&mdash; Sơn Tùng</p>
             </figure>
@@ -315,12 +361,11 @@
             <figure class="testimonial">
               <img
                 class="testimonial-img"
-                alt="Bức ảnh về khách hàng Sam Altman"
+                alt="Khách hàng Sam Altman"
                 src="img/customers/sam.jpg"
               />
               <blockquote class="testimonial-text">
-                The AI algorithm is crazy good, it chooses the right meals for
-                me every time. It's amazing not to worry about food anymore!
+                The Wagyu steak and wine pairing at Kron-Dahlah are truly world-class. Excellent service and authentic European culinary experience right here in Vietnam.
               </blockquote>
               <p class="testimonial-name">&mdash; Sam Altman</p>
             </figure>
@@ -328,14 +373,12 @@
             <figure class="testimonial">
               <img
                 class="testimonial-img"
-                alt="Bức ảnh về khách hàng Donald Trump"
+                alt="Khách hàng Donald Trump"
                 src="img/customers/trump.jpg"
                 width="128"
               />
               <blockquote class="testimonial-text">
-                Soulfood is a life saver! With this Iran war going on, there’s
-                absolutely no time for cooking. I'm too busy winning! I couldn’t
-                live without my daily meals now. High quality!
+                Tremendous taste! The best Black Angus steak and Bordeaux wine I've experienced in Hanoi. Truly high quality, five stars!
               </blockquote>
               <p class="testimonial-name">&mdash; Donald Trump</p>
             </figure>
@@ -343,14 +386,11 @@
             <figure class="testimonial">
               <img
                 class="testimonial-img"
-                alt="Bức ảnh về khách hàng Khanh Linh"
+                alt="Khách hàng Khánh Linh"
                 src="img/customers/khanhlinh.jpg"
               />
               <blockquote class="testimonial-text">
-                Mình đăng ký Soulfood cho cả gia đình, giúp tiết kiệm rất nhiều
-                thời gian. Bữa ăn luôn đảm bảo organic, thuần chay và hoàn toàn
-                không sử dụng nhựa, vừa tốt cho sức khỏe vừa thân thiện với môi
-                trường.
+                Gia đình mình chọn Set Royal cho tiệc sinh nhật của mẹ tại phòng VIP Kron-Dahlah. Món ăn bài trí rất đẹp mắt, tôm hùm phô mai thơm lừng và các bạn nhân viên phục vụ vô cùng tinh tế.
               </blockquote>
               <p class="testimonial-name">&mdash; Khánh Linh</p>
             </figure>
@@ -361,73 +401,73 @@
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-1.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-2.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-3.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-4.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-5.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-6.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-7.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-8.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-9.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-10.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-11.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
           <figure class="gallery-item">
             <img
               src="img/gallery/gallery-12.jpg"
-              alt="Ảnh món ăn được sắp xếp đẹp mắt""
+              alt="Ảnh món ăn tại Kron-Dahlah"
             />
           </figure>
         </div>
@@ -435,106 +475,125 @@
 
       <section class="section-pricing" id="pricing">
         <div class="container">
-          <span class="subheading">Pricing</span>
+          <span class="subheading">Set Menu Tiệc</span>
           <h2 class="heading-secondary">
-            Ăn ngon, sống khỏe mà vẫn không lo “đau ví”
+            Trọn vẹn phong vị châu Âu – Thăng hoa cùng người thương
           </h2>
         </div>
 
         <div class="container grid grid--2-cols margin-bottom-md">
           <div class="pricing-plan pricing-plan--starter">
             <header class="plan-header">
-              <p class="plan-name">Gói cơ bản</p>
-              <p class="plan-price"><span>$</span>119</p>
-              <p class="plan-text">Mỗi tháng. Chỉ khoảng 4$ cho mỗi bữa!</p>
+              <p class="plan-name">Set Rendez-vous (2 người)</p>
+              <p class="plan-price">990.000<span>₫</span></p>
+              <p class="plan-text">Chỉ ~495.000₫/người. Hoàn hảo cho buổi hẹn hò lãng mạn.</p>
             </header>
             <ul class="list">
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>1 bữa mỗi ngày</span>
+                <span>01 Salad Caesar gà nướng phô mai</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Đặt hàng từ 11am-9pm </span>
+                <span>02 Súp nấm Truffle khai vị thơm ngậy</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Giao hàng miễn phí</span>
+                <span>02 Bít tết Bò Mỹ Top Blade (chọn độ chín)</span>
               </li>
               <li class="list-item">
-                <ion-icon class="list-icon" name="close-outline"></ion-icon>
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>01 Bánh Tiramisu truyền thống Ý</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>02 Ly Rượu vang đỏ Chile thượng hạng</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Tặng kèm: Setup nến &amp; hoa bàn tiệc</span>
               </li>
             </ul>
             <div class="plan-sing-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
+              <a href="#cta" class="btn btn--full">Đặt bàn Set Romance</a>
             </div>
           </div>
 
           <div class="pricing-plan pricing-plan--complete">
             <header class="plan-header">
-              <p class="plan-name">Gói đầy đủ</p>
-              <p class="plan-price"><span>$</span>349</p>
-              <p class="plan-text">Mỗi tháng. Chỉ khoảng 11$ cho mỗi bữa!</p>
+              <p class="plan-name">Set Royal Gourmet (4-6 người)</p>
+              <p class="plan-price">2.490.000<span>₫</span></p>
+              <p class="plan-text">Trọn gói cho tiệc gia đình, sinh nhật hoặc tiếp đối tác.</p>
             </header>
             <ul class="list">
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span><strong>2 bữa</strong> mỗi ngày</span>
+                <span>01 Đĩa Cold Cuts &amp; Phô mai nhập khẩu Âu</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Đặt hàng <strong>24/7</strong></span>
+                <span>01 Đĩa Tôm hùm bỏ lò phô mai Mozzarella</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Giao hàng miễn phí</span>
+                <span>01 Thăn bò Ribeye Black Angus 500g</span>
               </li>
               <li class="list-item">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Khám phá công thức mới</span>
+                <span>01 Mỳ Ý cua tuyết sốt kem nấm Truffle</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>04 Phần Panna Cotta dâu tây rừng</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>01 Chai Vang đỏ Pháp Bordeaux cao cấp</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Miễn phí phòng VIP riêng tư &amp; trang trí</span>
               </li>
             </ul>
             <div class="plan-sing-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
+              <a href="#cta" class="btn btn--full">Đặt bàn Set Royal</a>
             </div>
           </div>
         </div>
 
         <div class="container grid">
           <aside class="plan-details">
-            Giá đã bao gồm tất cả các loại thuế. Bạn có thể hủy bất cứ lúc nào.
-            Cả hai gói đều có những quyền lợi sau:
+            * Tất cả giá niêm yết đã bao gồm thuế và phí phục vụ. Quý khách có thể yêu cầu điều chỉnh độ chín của bít tết hoặc chọn đổi món theo yêu cầu khẩu vị.
           </aside>
         </div>
 
         <div class="container grid grid--4-cols">
           <div class="feature">
-            <ion-icon class="feature-icon" name="infinite-outline"></ion-icon>
-            <p class="feature-title">Never cook again!!</p>
+            <ion-icon class="feature-icon" name="ribbon-outline"></ion-icon>
+            <p class="feature-title">100% Bò Nhập Khẩu</p>
             <p class="feature-text">
-              Gói đăng ký phục vụ đủ 365 ngày mỗi năm, kể cả các dịp lễ lớn.
+              Thịt bò Wagyu &amp; Black Angus có nguồn gốc rõ ràng, đạt chuẩn kiểm định quốc tế.
             </p>
           </div>
           <div class="feature">
-            <ion-icon class="feature-icon" name="nutrition-outline"></ion-icon>
-            <p class="feature-title">Local and organic</p>
+            <ion-icon class="feature-icon" name="restaurant-outline"></ion-icon>
+            <p class="feature-title">Bếp Trưởng Đẳng Cấp</p>
             <p class="feature-text">
-              Đầu bếp sử dụng nguyên liệu tươi, sạch và có nguồn gốc địa phương.
+              Đội ngũ bếp trưởng trên 12 năm kinh nghiệm tại các khách sạn 5 sao quốc tế.
             </p>
           </div>
           <div class="feature">
-            <ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
-            <p class="feature-title">No waste</p>
+            <ion-icon class="feature-icon" name="wine-outline"></ion-icon>
+            <p class="feature-title">Không Gian Sang Trọng</p>
             <p class="feature-text">
-              Tất cả bữa ăn đều được đóng gói bằng hộp tái sử dụng.
+              Kiến trúc châu Âu cổ điển kết hợp hiện đại, ánh nến lung linh và âm nhạc du dương.
             </p>
           </div>
           <div class="feature">
-            <ion-icon class="feature-icon" name="pause-outline"></ion-icon>
-            <p class="feature-title">Pause anytime</p>
+            <ion-icon class="feature-icon" name="heart-outline"></ion-icon>
+            <p class="feature-title">Dịch Vụ Chu Đáo 5 Sao</p>
             <p class="feature-text">
-              Đi du lịch? Chỉ cần tạm dừng gói, bạn sẽ được hoàn tiền cho những
-              ngày chưa sử dụng.
+              Phục vụ tận tâm, tư vấn kết hợp rượu vang và hỗ trợ trang trí tiệc kỷ niệm miễn phí.
             </p>
           </div>
         </div>
@@ -542,70 +601,126 @@
 
       <section class="section-cta" id="cta">
         <div class="container">
-          <div class="cta">
-            <div class="cta-text-box">
-              <h2 class="heading-secondary">
-                Dùng thử miễn phí bữa ăn đầu tiên!
-              </h2>
-              <p class="cta-text">
-                Bữa ăn ngon, lành mạnh, không rắc rối đang chờ bạn. Bắt đầu ăn
-                uống tốt hơn ngay hôm nay. Có thể hủy hoặc tạm dừng bất cứ lúc
-                nào. Bữa ăn đầu tiên sẽ miễn phí.
-              </p>
+          <!-- Floating Booking Card (Mẫu ảnh 2) -->
+          <div class="booking-card">
+            <div class="booking-header">
+              <h2 class="booking-title">Đặt bàn</h2>
+              <p class="booking-subtitle">Đặt bàn ngay, nhận ưu đãi liền tay – Giảm 15% &amp; Tặng setup nến hoa lãng mạn</p>
+            </div>
 
-              <form class="cta-form" name="sign-up" netlify>
-                <div>
-                  <label for="full-name">Họ tên</label>
-                  <input
-                    id="full-name"
-                    type="text"
-                    placeholder="Tuấn Anh"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label for="email">Địa chỉ email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="me@gmail.com"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label for="select-where"
-                    >Bạn biết đến chúng tôi từ đâu?</label
-                  >
-                  <select id="select-where" required>
-                    <option value="">Vui lòng chọn một lựa chọn:</option>
-                    <option value="friends">Bạn bè và người thân</option>
-                    <option value="youtube">YouTube video</option>
-                    <option value="podcast">Podcast</option>
-                    <option value="ad">Facebook ads</option>
-                    <option value="others">Khác</option>
+            <form class="booking-form" id="restaurant-booking-form">
+              <div class="booking-form-grid">
+                <!-- Vị trí / Không gian tiệc -->
+                <div class="booking-field">
+                  <label for="book-location">Vị trí / Không gian tiệc</label>
+                  <select id="book-location" required>
+                    <option value="Bàn nến hoa hẹn hò cặp đôi (Lãng mạn)">Bàn nến hoa hẹn hò cặp đôi (Lãng mạn)</option>
+                    <option value="Sảnh chính phong cách hoàng gia">Sảnh chính phong cách hoàng gia</option>
+                    <option value="Phòng VIP gia đình &amp; đối tác (Riêng tư)">Phòng VIP gia đình &amp; đối tác (Riêng tư)</option>
+                    <option value="Ban công ngoài trời ngắm phố">Ban công ngoài trời ngắm phố</option>
                   </select>
                 </div>
 
-                <button class="btn btn--form">Đăng ký ngay</button>
-              </form>
-            </div>
-            <div
-              class="cta-img-box"
-              role="img"
-              aria-label="Woman enjoying food"
-            ></div>
+                <!-- Số lượng khách -->
+                <div class="booking-field">
+                  <label for="book-guests">Số lượng khách</label>
+                  <select id="book-guests" required>
+                    <option value="1 người">1 người</option>
+                    <option value="2 người (Cặp đôi)" selected>2 người (Cặp đôi)</option>
+                    <option value="3 - 4 người (Nhóm nhỏ)">3 - 4 người (Nhóm nhỏ)</option>
+                    <option value="5 - 8 người (Tiệc gia đình)">5 - 8 người (Tiệc gia đình)</option>
+                    <option value="Trên 8 người (Đặt tiệc lớn)">Trên 8 người (Đặt tiệc lớn)</option>
+                  </select>
+                </div>
+
+                <!-- Ngày đặt bàn -->
+                <div class="booking-field">
+                  <label for="book-date">Ngày đặt</label>
+                  <input id="book-date" type="date" required />
+                </div>
+
+                <!-- Thời gian -->
+                <div class="booking-field">
+                  <label for="book-time">Thời gian</label>
+                  <select id="book-time" required>
+                    <option value="11:30 AM">11:30 AM (Bữa trưa)</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="18:00 PM">18:00 PM (Bữa tối)</option>
+                    <option value="18:30 PM">18:30 PM</option>
+                    <option value="19:00 PM" selected>19:00 PM (Khung giờ vàng)</option>
+                    <option value="19:30 PM">19:30 PM</option>
+                    <option value="20:00 PM">20:00 PM</option>
+                    <option value="20:30 PM">20:30 PM</option>
+                  </select>
+                </div>
+
+                <!-- Họ và tên -->
+                <div class="booking-field">
+                  <label for="book-name">Họ và tên quý khách</label>
+                  <input id="book-name" type="text" placeholder="Nguyễn Văn A" required />
+                </div>
+
+                <!-- Số điện thoại -->
+                <div class="booking-field">
+                  <label for="book-phone">Số điện thoại liên hệ</label>
+                  <input id="book-phone" type="tel" placeholder="0912 345 678" required />
+                </div>
+
+                <!-- Chọn trước Set món -->
+                <div class="booking-field">
+                  <label for="book-set">Lựa chọn Set Menu</label>
+                  <select id="book-set">
+                    <option value="Chưa chọn (Sẽ gọi món tại bàn)">Chưa chọn (Gọi món tại bàn)</option>
+                    <option value="Set Romance 2 người (990.000₫)">Set Romance 2 người (990.000₫)</option>
+                    <option value="Set Royal Gourmet 4-6 người (2.490.000₫)">Set Royal Gourmet 4-6 người (2.490.000₫)</option>
+                  </select>
+                </div>
+
+                <!-- Ghi chú đặc biệt -->
+                <div class="booking-field">
+                  <label for="book-notes">Ghi chú đặc biệt</label>
+                  <input id="book-notes" type="text" placeholder="Ví dụ: Trang trí sinh nhật, dị ứng đồ cay..." />
+                </div>
+
+                <!-- Nút Submit đỏ to nổi bật -->
+                <div class="booking-field booking-field--full">
+                  <button type="submit" class="btn-booking">TÌM BÀN &amp; ĐẶT CHỖ NGAY</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Secondary Promo Bar (Mẫu ảnh 2) -->
+          <div class="sub-promo-bar">
+            <h3 class="sub-promo-title">Đặt món ăn ngon trực tuyến</h3>
+            <a href="#meals" class="btn-promo-action">Chọn món ngay!</a>
           </div>
         </div>
       </section>
+
+      <!-- Modal Popup thông báo đặt bàn thành công -->
+      <div class="modal-overlay" id="booking-modal">
+        <div class="modal-box">
+          <div class="modal-icon">&check;</div>
+          <h3 class="modal-title">Đặt Bàn Thành Công!</h3>
+          <p style="font-size: 1.4rem; color: #16a34a; font-weight: 700; margin-bottom: 1.2rem;">
+            Mã ưu đãi của bạn: KRON15OFF (-15% tổng hóa đơn)
+          </p>
+          <div class="modal-body" id="modal-details">
+            <!-- Nội dung chi tiết do JS điền -->
+          </div>
+          <button class="btn-modal-close" id="btn-close-modal">Đồng ý &amp; Đóng</button>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
       <div class="container grid grid--footer">
         <div class="logo-col">
-          <a href="#" class="footer-logo">
-            <img class="logo" alt="Soulfood logo" src="img/soulfood.png" />
+          <a href="#" class="footer-logo-brand">
+            <span class="brand-name">Kron-Dahlah</span>
+            <span class="brand-sub">Western Restaurant</span>
           </a>
 
           <ul class="social-links">
@@ -627,49 +742,49 @@
           </ul>
 
           <p class="copyright">
-            Copyright &copy; 2027 by Soulfood, Inc. All rights reserved.
+            Copyright &copy; 2026 by Kron-Dahlah Restaurant, Inc. All rights reserved.
           </p>
         </div>
         <div class="address-col">
-          <p class="footer-heading">Contact us</p>
+          <p class="footer-heading">Liên hệ đặt bàn</p>
           <address class="contacts">
             <p class="address">
-              Tầng 7, tòa A2, đại học kinh tế quốc dân, Hà Nội, Việt Nam
+              Tầng 7, Tòa A2, Đại học Kinh tế Quốc dân, Giải Phóng, Hà Nội, Việt Nam
             </p>
             <p>
-              <a class="footer-link" href="tel:0383869999">0383869999</a><br />
-              <a class="footer-link" href="mailto:soulfood@gmail.com"
-                >soulfood@gmail</a
+              <a class="footer-link" href="tel:0383869999">038 386 9999</a><br />
+              <a class="footer-link" href="mailto:reservation@kron-dahlah.vn"
+                >reservation@kron-dahlah.vn</a
               >
             </p>
           </address>
         </div>
         <nav class="nav-col">
-          <p class="footer-heading">Account</p>
+          <p class="footer-heading">Thực đơn</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Create account</a></li>
-            <li><a class="footer-link" href="#">Sign in</a></li>
-            <li><a class="footer-link" href="#">IOS app</a></li>
-            <li><a class="footer-link" href="#">Android app</a></li>
+            <li><a class="footer-link" href="#meals">Bít tết Wagyu</a></li>
+            <li><a class="footer-link" href="#meals">Mỳ & Cơm Ý</a></li>
+            <li><a class="footer-link" href="#pricing">Set Romance 2 người</a></li>
+            <li><a class="footer-link" href="#pricing">Set Royal 4-6 người</a></li>
           </ul>
         </nav>
 
         <nav class="nav-col">
-          <p class="footer-heading">Company</p>
+          <p class="footer-heading">Về Kron-Dahlah</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">About Soulfood</a></li>
-            <li><a class="footer-link" href="#">For Business</a></li>
-            <li><a class="footer-link" href="#">Cooking partners</a></li>
-            <li><a class="footer-link" href="#">Careers</a></li>
+            <li><a class="footer-link" href="#how">Câu chuyện thương hiệu</a></li>
+            <li><a class="footer-link" href="#">Bếp trưởng quốc tế</a></li>
+            <li><a class="footer-link" href="#">Đối tác nguyên liệu Âu</a></li>
+            <li><a class="footer-link" href="#">Tuyển dụng</a></li>
           </ul>
         </nav>
 
         <nav class="nav-col">
-          <p class="footer-heading">Resources</p>
+          <p class="footer-heading">Hỗ trợ khách hàng</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">Recipe directory </a></li>
-            <li><a class="footer-link" href="#">Help center</a></li>
-            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+            <li><a class="footer-link" href="#cta">Đặt bàn online</a></li>
+            <li><a class="footer-link" href="#">Quy định đặt & hủy bàn</a></li>
+            <li><a class="footer-link" href="#">Chính sách riêng tư</a></li>
           </ul>
         </nav>
       </div>
