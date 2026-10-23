@@ -172,3 +172,70 @@ if (btnCloseModal && bookingModal) {
     }
   });
 }
+
+
+///////////////////////////////////////////////////////////
+// 1. THANH TIẾN TRÌNH CUỘN TRANG (READING PROGRESS BAR)
+window.addEventListener("scroll", function () {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  const progressBar = document.getElementById("scroll-progress");
+  if (progressBar) {
+    progressBar.style.width = scrolled + "%";
+  }
+});
+
+///////////////////////////////////////////////////////////
+// 2. SCROLLSPY - TỰ ĐỘNG HIGHLIGHT MỤC MENU KHI CUỘN ĐẾN
+const navSections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".main-nav-link:not(.nav-cta)");
+
+window.addEventListener("scroll", function () {
+  let currentSectionId = "";
+  const scrollPosition = window.pageYOffset + 200;
+
+  navSections.forEach(function (section) {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentSectionId = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(function (link) {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + currentSectionId) {
+      link.classList.add("active");
+    }
+  });
+});
+
+///////////////////////////////////////////////////////////
+// 3. HIỆU ỨNG TƯƠNG TÁC NÚT "ĐẶT BÀN NGAY"
+const btnHeaderBooking = document.getElementById("btn-header-booking");
+if (btnHeaderBooking) {
+  btnHeaderBooking.addEventListener("click", function (e) {
+    e.preventDefault();
+    const ctaSection = document.getElementById("cta");
+    const bookingCard = document.querySelector(".booking-card");
+    const firstInput = document.getElementById("book-location");
+
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    if (bookingCard) {
+      bookingCard.classList.remove("highlight-focus");
+      // Trigger animation re-flow
+      void bookingCard.offsetWidth;
+      bookingCard.classList.add("highlight-focus");
+    }
+
+    if (firstInput) {
+      setTimeout(function () {
+        firstInput.focus();
+      }, 700);
+    }
+  });
+}

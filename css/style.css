@@ -26,6 +26,7 @@
 }
 
 .logo-brand .brand-name {
+  white-space: nowrap;
   font-size: 2.8rem;
   font-weight: 800;
   letter-spacing: 2px;
@@ -83,6 +84,9 @@
   font-weight: 700;
 }
 
+.main-nav-link {
+  white-space: nowrap;
+}
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
@@ -582,7 +586,7 @@
 .cta-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 3.2rem;
+  column-gap: 2.2rem;
   row-gap: 2.4rem;
 }
 
@@ -708,10 +712,13 @@
 }
 
 /* Header sang trọng, sáng sủa */
+/* Header phong cách Dark Glassmorphism sang trọng như ảnh */
 .header {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #f1f5f9;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background-color: #12141a !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
 }
 
 .logo-brand {
@@ -722,6 +729,7 @@
 }
 
 .logo-brand .brand-name {
+  white-space: nowrap;
   font-size: 3.2rem;
   font-weight: 900;
   letter-spacing: 2.5px;
@@ -738,6 +746,9 @@
   margin-top: 2px;
 }
 
+.main-nav-link {
+  white-space: nowrap;
+}
 .main-nav-link:link,
 .main-nav-link:visited {
   color: #1f2937 !important; /* Ghi đen sắc sảo */
@@ -1332,4 +1343,272 @@
   padding: 1.2rem 3.2rem;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+/* ========================================================== */
+/* HIỆU ỨNG TƯƠNG TÁC CAO CẤP CHO HEADER VÀ CÁC MỤC TRÊN ẢNH */
+/* ========================================================== */
+
+/* 1. Thanh tiến trình cuộn trang ở đỉnh (Reading Progress Bar) */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #b91c1c, #ef4444, #ff7a66);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* 2. Sticky Glassmorphism Header */
+body.sticky .header {
+  background-color: rgba(18, 20, 26, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  height: 7.6rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 3. Logo KRON-DAHLAH & Hiệu ứng ánh sáng lấp lánh (Shimmer & Glow) */
+.logo-brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.15;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.logo-brand:hover {
+  transform: scale(1.03);
+}
+
+.logo-brand .brand-name {
+  white-space: nowrap;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 2.8px;
+  color: #ff7a66 !important; /* Màu cam san hô / đỏ hồng ấm áp quý tộc như ảnh */
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo-brand:hover .brand-name {
+  color: #ff8e7d !important;
+  text-shadow: 0 0 16px rgba(255, 122, 102, 0.7);
+}
+
+/* Hiệu ứng tia sáng quét ngang logo khi hover (Shimmer beam) */
+.logo-brand::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.logo-brand:hover::before {
+  left: 150%;
+  transition: left 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-brand .brand-sub {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f1f5f9 !important; /* Trắng sáng rõ ràng */
+  text-transform: uppercase;
+  margin-top: 3px;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.logo-brand:hover .brand-sub {
+  opacity: 1;
+  color: #ffffff !important;
+}
+
+/* 4. Menu Liên kết & Hiệu ứng gạch chân mở rộng mượt mà (Animated Slide Underline) */
+.main-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.main-nav-link {
+  white-space: nowrap;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  position: relative;
+  color: #ffffff !important; /* Trắng sáng như trong ảnh */
+  font-weight: 600;
+  font-size: 1.65rem;
+  padding: 0.8rem 0.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+/* Thanh chỉ báo trượt dưới liên kết */
+.main-nav-link:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #ef4444, #ff7a66);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* Hover & Active State cho Nav links */
+.main-nav-link:not(.nav-cta):hover,
+.main-nav-link:not(.nav-cta).active {
+  color: #ff7a66 !important;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(255, 122, 102, 0.4);
+}
+
+.main-nav-link:not(.nav-cta):hover::after,
+.main-nav-link:not(.nav-cta).active::after {
+  width: 100%;
+}
+
+/* 5. Nút "Đặt bàn ngay" - Hiệu ứng Nhịp đập thu hút (Pulse Animation) */
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  position: relative;
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.65rem;
+  padding: 1.2rem 2.6rem;
+  border-radius: 8px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 16px rgba(185, 28, 28, 0.45) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  animation: pulse-border 2.5s infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), 0 4px 16px rgba(185, 28, 28, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0), 0 6px 20px rgba(185, 28, 28, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0), 0 4px 16px rgba(185, 28, 28, 0.45);
+  }
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6) !important;
+  animation: none;
+}
+
+/* Ánh sáng quét qua nút khi hover */
+.main-nav-link.nav-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.main-nav-link.nav-cta:hover::before {
+  left: 170%;
+  transition: left 0.75s ease-in-out;
+}
+
+/* 6. Nút Hotline trong Header */
+.header-hotline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1.45rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s;
+}
+
+.header-hotline:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ff7a66;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.header-hotline .hotline-icon {
+  font-size: 1.8rem;
+  color: #ff7a66;
+  transition: transform 0.3s;
+}
+
+.header-hotline:hover .hotline-icon {
+  animation: phone-ring 0.6s ease infinite alternate;
+}
+
+@keyframes phone-ring {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(15deg); }
+}
+
+/* 7. Hiệu ứng nổi bật Form đặt bàn khi click "Đặt bàn ngay" */
+@keyframes highlight-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8);
+    border-color: #ef4444;
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(239, 68, 68, 0.6);
+    border-color: #ef4444;
+  }
+  100% {
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+    border-color: #e2e8f0;
+  }
+}
+
+.booking-card.highlight-focus {
+  animation: highlight-glow 2s ease-out;
 }
