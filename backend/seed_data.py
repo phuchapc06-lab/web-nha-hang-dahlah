@@ -16,56 +16,56 @@ def seed_all():
         # Bò Bít tết Thượng hạng
         ('MN-01', 'Thăn Bò Bít Tết Wagyu Úc MB5+', 'steak', 680000, 
          'Vân mỡ cẩm thạch tuyệt hảo đạt chuẩn MB5+, nướng than hoa thơm lừng kèm bơ thảo mộc và sốt nấm Truffle đen.',
-         'img/gallery/gallery-2.jpg', 1, 1, 620, 88, 4.9),
+         'img/dishes/steak_wagyu.jpg', 1, 1, 620, 88, 4.9),
         ('MN-02', 'Thăn Bò Black Angus Ribeye 300g', 'steak', 520000, 
          'Thịt thăn lưng bò đen Mỹ mềm mọng ngập nước, phục vụ cùng măng tây áp chảo và khoai tây nghiền bơ tỏi.',
-         'img/gallery/gallery-7.jpg', 1, 1, 580, 85, 4.8),
+         'img/dishes/steak_ribeye.jpg', 1, 1, 580, 85, 4.8),
         ('MN-03', 'Bít Tết Bò Mỹ Top Blade Sốt Tiêu Đen', 'steak', 390000, 
          'Thăn lõi vai bò Mỹ đậm đà, vị cay nồng quyến rũ của hạt tiêu Phú Quốc ngâm rượu vang đỏ.',
-         'img/gallery/gallery-8.jpg', 0, 1, 540, 82, 4.8),
+         'img/dishes/steak_topblade.jpg', 0, 1, 540, 82, 4.8),
 
         # Món Khai Vị Tinh Tế (Starters)
         ('MN-04', 'Súp Kem Nấm Truffle Đen Khai Vị', 'starter', 145000, 
          'Súp kem béo ngậy nấu từ nấm rừng kết hợp tinh dầu Truffle đen quý hiếm và bánh mỳ nướng bơ tỏi giòn tan.',
-         'img/gallery/gallery-3.jpg', 0, 1, 280, 80, 4.9),
+         'img/dishes/soup_truffle.jpg', 0, 1, 280, 80, 4.9),
         ('MN-05', 'Đĩa Cold Cuts & Phô Mai Nhập Khẩu Âu', 'starter', 320000, 
          'Thịt nguội Iberico trứ danh, xúc xích Salami và 3 loại phô mai Brie, Camembert, Cheddar ăn kèm oliu và nho khô.',
-         'img/gallery/gallery-10.jpg', 0, 1, 450, 78, 4.7),
+         'img/dishes/cold_cuts.jpg', 0, 1, 450, 78, 4.7),
         ('MN-06', 'Salad Cá Hồi Xông Khói Sốt Chanh Leo', 'starter', 195000, 
          'Cá hồi Na Uy xông khói gỗ sồi, xà lách tươi hữu cơ Đà Lạt cùng sốt chanh leo chua ngọt thanh mát.',
-         'img/gallery/gallery-11.jpg', 0, 1, 310, 92, 4.8),
+         'img/dishes/salad_salmon.jpg', 0, 1, 310, 92, 4.8),
 
         # Món Chính & Mỳ Ý (Pasta & Seafood)
         ('MN-07', 'Mỳ Ý Cua Tuyết Sốt Kem Nấm Truffle', 'pasta', 285000, 
          'Sợi mỳ dẹt Fettuccine làm thủ công trong ngày quyện sốt kem phô mai béo thơm và thịt cua tuyết ngọt mềm.',
-         'img/gallery/gallery-1.jpg', 1, 1, 530, 80, 4.9),
+         'img/dishes/pasta_crab.jpg', 1, 1, 530, 80, 4.9),
         ('MN-08', 'Tôm Hùm Bỏ Lò Phô Mai Mozzarella', 'seafood', 750000, 
          'Nửa con tôm hùm bông tươi nướng đút lò phủ ngập phô mai béo ngậy, thảo mộc Rosemary thơm nức.',
-         'img/gallery/gallery-12.jpg', 1, 1, 490, 86, 5.0),
+         'img/dishes/lobster_cheese.jpg', 1, 1, 490, 86, 5.0),
 
         # Tráng Miệng Hoàng Gia (Dessert)
         ('MN-09', 'Bánh Tiramisu Truyền Thống Nước Ý', 'dessert', 120000, 
          'Bánh phô mai Mascarpone thơm ngát cà phê Espresso thượng hạng và rượu Kahlua quyến rũ.',
-         'img/gallery/gallery-4.jpg', 0, 1, 350, 70, 4.9),
+         'img/dishes/dessert_tiramisu.jpg', 0, 1, 350, 70, 4.9),
         ('MN-10', 'Panna Cotta Dâu Tây Rừng & Vani Madagascar', 'dessert', 95000, 
          'Món tráng miệng mềm mịn tan trong miệng ăn kèm mứt dâu tây rừng tươi nguyên chất.',
-         'img/gallery/gallery-5.jpg', 0, 1, 260, 75, 4.8),
+         'img/dishes/dessert_pannacotta.jpg', 0, 1, 260, 75, 4.8),
 
         # Bộ Sưu Tập Rượu Vang Châu Âu (Wine)
         ('MN-11', 'Vang Đỏ Bordeaux Château Cao Cấp (Chai)', 'wine', 1650000, 
          'Dòng vang Pháp đậm đà nồng nàn hương gỗ sồi và quả mọng đen chín, lý tưởng khi dùng cùng bít tết Wagyu.',
-         'img/gallery/gallery-6.jpg', 1, 1, 150, 65, 4.9),
+         'img/dishes/wine_bordeaux.jpg', 1, 1, 150, 65, 4.9),
         ('MN-12', 'Vang Đỏ Chile Cabernet Sauvignon (Ly)', 'wine', 180000, 
          'Vị chát êm dịu, hậu vị trái cây ngọt ngào, kết hợp hoàn hảo cùng bữa tối hẹn hò.',
-         'img/gallery/gallery-9.jpg', 0, 1, 130, 68, 4.8),
+         'img/dishes/wine_glass.jpg', 0, 1, 130, 68, 4.8),
 
         # Set Menu Combo Trọn Gói
         ('MN-COMBO-01', 'Set Romance 2 Người (Lãng Mạn Nến Hoa)', 'combo', 990000, 
          'Trọn gói cho cặp đôi: 2 Súp nấm Truffle, 2 Bít tết Bò Mỹ Top Blade, 1 Tiramisu, 2 Ly vang đỏ Chile, tặng setup hoa nến.',
-         'img/meals/meal-1.jpg', 1, 1, 1100, 85, 4.9),
+         'img/dishes/combo_romance.jpg', 1, 1, 1100, 85, 4.9),
         ('MN-COMBO-02', 'Set Royal Gourmet (4-6 Người - Tiệc VIP)', 'combo', 2490000, 
          'Trọn gói đại tiệc: 1 Đĩa Cold Cuts, 1 Tôm hùm bỏ lò, 1 Thăn Ribeye 500g, 1 Mỳ Ý cua tuyết, 4 Panna Cotta, 1 Chai vang Bordeaux.',
-         'img/meals/meal-2.jpg', 1, 1, 2600, 88, 5.0),
+         'img/dishes/combo_royal.jpg', 1, 1, 2600, 88, 5.0),
     ]
 
     cursor.executemany('''

@@ -259,7 +259,7 @@ def add_menu_item():
     category = data.get('category', 'steak')
     price = data.get('price', 0)
     description = data.get('description', '')
-    image_url = data.get('image_url', 'img/gallery/gallery-2.jpg')
+    image_url = data.get('image_url', 'img/dishes/steak_wagyu.jpg')
     is_signature = 1 if data.get('is_signature') else 0
     code = data.get('code') or f"MN-{random.randint(100, 999)}"
 
