@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Trị Nhà Hàng | Kron-Dahlah Steakhouse</title>
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --primary: #991b1b;
+      --primary-hover: #b91c1c;
+      --accent-gold: #d97706;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --success: #16a34a;
+      --warning: #eab308;
+      --danger: #dc2626;
+      --info: #2563eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP NAVBAR */
+    .topbar {
+      background-color: rgba(17, 24, 39, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      padding: 1.2rem 2.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .brand-logo span {
+      color: #ef4444;
+    }
+
+    .portal-badge {
+      background: rgba(153, 27, 27, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .btn-view-site {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1f2937;
+      color: #e5e7eb;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid #374151;
+    }
+
+    .btn-view-site:hover {
+      background: #374151;
+      color: #fff;
+    }
+
+    /* MAIN CONTAINER */
+    .dashboard-container {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    /* HEADER TITLES */
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* STATS KPI CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-info h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-info .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .icon-bookings { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+    .icon-today { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .icon-pending { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .icon-revenue { background: rgba(217, 119, 6, 0.15); color: #fbbf24; }
+
+    /* TABS */
+    .tabs-nav {
+      display: flex;
+      gap: 0.8rem;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem 1.6rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      color: #f87171;
+      border-bottom-color: #ef4444;
+    }
+
+    /* FILTERS & SEARCH TOOLBAR */
+    .toolbar {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 0.65rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #ef4444;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 0.65rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-refresh {
+      background: #374151;
+      color: #e5e7eb;
+    }
+    .btn-refresh:hover {
+      background: #4b5563;
+    }
+
+    /* DATA TABLE */
+    .table-container {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    thead {
+      background-color: #1f2937;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      color: #d1d5db;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 1.2rem;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: middle;
+    }
+
+    tbody tr:hover {
+      background-color: rgba(31, 41, 55, 0.5);
+    }
+
+    .booking-code {
+      font-family: monospace;
+      font-weight: 700;
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .cust-info .cust-name {
+      font-weight: 600;
+      color: #fff;
+    }
+    .cust-info .cust-phone {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* STATUS BADGES */
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .badge-pending {
+      background: rgba(234, 179, 8, 0.15);
+      color: #facc15;
+      border: 1px solid rgba(234, 179, 8, 0.3);
+    }
+    .badge-confirmed {
+      background: rgba(22, 163, 74, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(22, 163, 74, 0.3);
+    }
+    .badge-completed {
+      background: rgba(37, 99, 235, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+    }
+    .badge-cancelled {
+      background: rgba(107, 114, 128, 0.15);
+      color: #9ca3af;
+      border: 1px solid rgba(107, 114, 128, 0.3);
+    }
+
+    /* ACTION BUTTONS */
+    .action-btns {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-confirm { background: #15803d; color: #fff; }
+    .btn-confirm:hover { background: #166534; }
+
+    .btn-complete { background: #1d4ed8; color: #fff; }
+    .btn-complete:hover { background: #1e40af; }
+
+    .btn-cancel { background: #4b5563; color: #fff; }
+    .btn-cancel:hover { background: #374151; }
+
+    .btn-del { background: #b91c1c; color: #fff; }
+    .btn-del:hover { background: #991b1b; }
+
+    /* MENU GRID */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card-img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .menu-card-body {
+      padding: 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-item-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .menu-item-price {
+      color: #f87171;
+      font-weight: 700;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .menu-item-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .menu-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 0.8rem;
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      color: #d1d5db;
+    }
+
+    .form-control {
+      width: 100%;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 0.65rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #15803d;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand-box">
+      <div class="brand-logo">Kron-<span>Dahlah</span></div>
+      <span class="portal-badge">Admin Portal</span>
+    </div>
+    <div class="topbar-actions">
+      <span id="current-clock" style="font-size: 0.85rem; color: var(--text-muted);"></span>
+      <a href="/" target="_blank" class="btn-view-site">
+        <span>🌐</span> Xem Trang Chủ
+      </a>
+    </div>
+  </header>
+
+  <!-- DASHBOARD CONTAINER -->
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <div>
+        <h1 class="page-title">Quản Lý Nhà Hàng & Bàn Tiệc</h1>
+        <p class="page-subtitle">Theo dõi đơn đặt bàn trực tuyến, doanh thu ước tính và kiểm soát thực đơn</p>
+      </div>
+      <button class="btn-action btn-refresh" onclick="loadAllData()">
+        <span>🔄</span> Làm Mới Dữ Liệu
+      </button>
+    </div>
+
+    <!-- STATS CARDS -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Tổng Đơn Đặt Bàn</h4>
+          <div class="stat-value" id="stat-total">0</div>
+        </div>
+        <div class="stat-icon icon-bookings">📅</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Khách Đặt Hôm Nay</h4>
+          <div class="stat-value" id="stat-today">0</div>
+        </div>
+        <div class="stat-icon icon-today">⏰</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Chờ Xác Nhận</h4>
+          <div class="stat-value" id="stat-pending" style="color: #f87171;">0</div>
+        </div>
+        <div class="stat-icon icon-pending">📞</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-info">
+          <h4>Doanh Thu Ước Tính</h4>
+          <div class="stat-value" id="stat-revenue" style="color: #fbbf24; font-size: 1.5rem;">0₫</div>
+        </div>
+        <div class="stat-icon icon-revenue">💰</div>
+      </div>
+    </section>
+
+    <!-- TABS NAVIGATION -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('bookings')">📋 Danh Sách Đặt Bàn</button>
+      <button class="tab-btn" onclick="switchTab('menu')">🥩 Quản Lý Thực Đơn</button>
+      <button class="tab-btn" onclick="switchTab('reviews')">⭐ Đánh Giá & Phản Hồi</button>
+    </nav>
+
+    <!-- TAB 1: BOOKINGS -->
+    <section id="tab-bookings">
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search-booking" class="search-input" placeholder="🔍 Tìm theo mã KD, tên khách, số điện thoại..." oninput="filterBookings()">
+        </div>
+        <div class="filter-group">
+          <select id="filter-status" class="filter-select" onchange="filterBookings()">
+            <option value="all">Tất cả trạng thái</option>
+            <option value="pending">Chờ xác nhận (Pending)</option>
+            <option value="confirmed">Đã xác nhận (Confirmed)</option>
+            <option value="completed">Đã dùng tiệc (Completed)</option>
+            <option value="cancelled">Đã hủy (Cancelled)</option>
+          </select>
+          <input type="date" id="filter-date" class="filter-select" onchange="filterBookings()">
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Mã Đơn</th>
+              <th>Khách Hàng</th>
+              <th>Ngày & Giờ</th>
+              <th>Số Lượng & Vị Trí</th>
+              <th>Set Menu Đặt Trước</th>
+              <th>Doanh Thu</th>
+              <th>Ghi Chú</th>
+              <th>Trạng Thái</th>
+              <th>Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-table-body">
+            <!-- JS điền dữ liệu -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 2: MENU ITEMS -->
+    <section id="tab-menu" style="display: none;">
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search-menu" class="search-input" placeholder="🔍 Tìm món ăn theo tên hoặc mã món..." oninput="renderMenu()">
+        </div>
+        <div class="filter-group">
+          <select id="filter-category" class="filter-select" onchange="renderMenu()">
+            <option value="all">Tất cả danh mục</option>
+            <option value="steak">Bít tết hảo hạng</option>
+            <option value="starter">Món khai vị</option>
+            <option value="pasta">Món chính & Mỳ Ý</option>
+            <option value="dessert">Tráng miệng</option>
+            <option value="wine">Rượu vang</option>
+            <option value="combo">Set Menu combo</option>
+          </select>
+          <button class="btn-action" onclick="openAddMenuModal()">
+            <span>➕</span> Thêm Món Mới
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menu-grid-container">
+        <!-- JS điền danh sách món -->
+      </div>
+    </section>
+
+    <!-- TAB 3: REVIEWS -->
+    <section id="tab-reviews" style="display: none;">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Khách Hàng</th>
+              <th>Đánh Giá</th>
+              <th>Món Đã Dùng</th>
+              <th>Nội Dung Nhận Xét</th>
+              <th>Thời Gian</th>
+            </tr>
+          </thead>
+          <tbody id="reviews-table-body">
+            <!-- JS điền đánh giá -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL THÊM MÓN MỚI -->
+  <div class="modal-backdrop" id="modal-add-menu">
+    <div class="modal-content">
+      <h3 class="modal-title">Thêm Món Mới Vào Menu</h3>
+      <form id="form-add-menu" onsubmit="submitNewMenuItem(event)">
+        <div class="form-group">
+          <label>Tên món ăn</label>
+          <input type="text" id="menu-name" class="form-control" placeholder="Ví dụ: Thăn bò Wagyu nướng sốt nấm" required>
+        </div>
+        <div class="form-group">
+          <label>Danh mục</label>
+          <select id="menu-cat" class="form-control">
+            <option value="steak">Bít tết</option>
+            <option value="starter">Khai vị</option>
+            <option value="pasta">Mỳ Ý / Món chính</option>
+            <option value="dessert">Tráng miệng</option>
+            <option value="wine">Rượu vang</option>
+            <option value="combo">Set Menu</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Giá niêm yết (VNĐ)</label>
+          <input type="number" id="menu-price" class="form-control" placeholder="Ví dụ: 450000" required>
+        </div>
+        <div class="form-group">
+          <label>Mô tả hương vị & nguyên liệu</label>
+          <textarea id="menu-desc" class="form-control" rows="3" placeholder="Mô tả tóm tắt..."></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+          <button type="button" class="btn-action btn-refresh" onclick="closeAddMenuModal()">Hủy</button>
+          <button type="submit" class="btn-action">Lưu Món Ăn</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast">Đã cập nhật dữ liệu thành công!</div>
+
+  <script>
+    let allBookings = [];
+    let allMenuItems = [];
+    let allReviews = [];
+
+    // Realtime Clock
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('current-clock').textContent = now.toLocaleDateString('vi-VN', {
+        weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Show Toast
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // Tab Switching
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById('tab-bookings').style.display = tab === 'bookings' ? 'block' : 'none';
+      document.getElementById('tab-menu').style.display = tab === 'menu' ? 'block' : 'none';
+      document.getElementById('tab-reviews').style.display = tab === 'reviews' ? 'block' : 'none';
+
+      if (tab === 'menu' && allMenuItems.length === 0) loadMenu();
+      if (tab === 'reviews' && allReviews.length === 0) loadReviews();
+    }
+
+    // Fetch Stats
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/stats');
+        const json = await res.json();
+        if (json.success) {
+          const d = json.data;
+          document.getElementById('stat-total').textContent = d.total_bookings;
+          document.getElementById('stat-today').textContent = d.today_bookings;
+          document.getElementById('stat-pending').textContent = d.pending_bookings;
+          document.getElementById('stat-revenue').textContent = Number(d.total_revenue).toLocaleString('vi-VN') + '₫';
+        }
+      } catch (err) {
+        console.error('Lỗi tải stats:', err);
+      }
+    }
+
+    // Fetch Bookings
+    async function loadBookings() {
+      try {
+        const res = await fetch('/api/bookings');
+        const json = await res.json();
+        if (json.success) {
+          allBookings = json.data;
+          renderBookings(allBookings);
+        }
+      } catch (err) {
+        console.error('Lỗi tải bookings:', err);
+      }
+    }
+
+    // Render Bookings Table
+    function renderBookings(list) {
+      const tbody = document.getElementById('bookings-table-body');
+      if (list.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 2rem;">Không tìm thấy đơn đặt bàn nào.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = list.map(b => {
+        let badgeClass = 'badge-pending';
+        let statusText = 'Chờ xác nhận';
+        if (b.status === 'confirmed') { badgeClass = 'badge-confirmed'; statusText = 'Đã xác nhận'; }
+        else if (b.status === 'completed') { badgeClass = 'badge-completed'; statusText = 'Đã dùng tiệc'; }
+        else if (b.status === 'cancelled') { badgeClass = 'badge-cancelled'; statusText = 'Đã hủy'; }
+
+        return `
+          <tr>
+            <td><span class="booking-code">${b.booking_code}</span></td>
+            <td>
+              <div class="cust-info">
+                <div class="cust-name">${b.customer_name}</div>
+                <div class="cust-phone">📞 ${b.phone}</div>
+              </div>
+            </td>
+            <td>
+              <div><strong>${b.booking_time}</strong></div>
+              <div style="color: var(--text-muted); font-size: 0.8rem;">${b.booking_date}</div>
+            </td>
+            <td>
+              <div><strong>${b.guests}</strong></div>
+              <div style="color: var(--text-muted); font-size: 0.8rem;">${b.location}</div>
+            </td>
+            <td><span style="color: #fca5a5; font-weight: 500;">${b.set_menu}</span></td>
+            <td><strong style="color: #fbbf24;">${Number(b.estimated_price).toLocaleString('vi-VN')}₫</strong></td>
+            <td><span style="font-size: 0.85rem; color: var(--text-muted);">${b.notes || 'Không có'}</span></td>
+            <td><span class="badge ${badgeClass}">${statusText}</span></td>
+            <td>
+              <div class="action-btns">
+                ${b.status === 'pending' ? `<button class="btn-sm btn-confirm" onclick="updateStatus(${b.id}, 'confirmed')" title="Xác nhận đơn">Duyệt</button>` : ''}
+                ${b.status === 'confirmed' ? `<button class="btn-sm btn-complete" onclick="updateStatus(${b.id}, 'completed')" title="Đã đón khách dùng tiệc">Xong</button>` : ''}
+                ${b.status !== 'cancelled' ? `<button class="btn-sm btn-cancel" onclick="updateStatus(${b.id}, 'cancelled')" title="Hủy bàn">Hủy</button>` : ''}
+                <button class="btn-sm btn-del" onclick="deleteBooking(${b.id})" title="Xóa khỏi hệ thống">🗑️</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Filter Bookings
+    function filterBookings() {
+      const q = document.getElementById('search-booking').value.toLowerCase();
+      const st = document.getElementById('filter-status').value;
+      const dt = document.getElementById('filter-date').value;
+
+      const filtered = allBookings.filter(b => {
+        const matchSearch = b.customer_name.toLowerCase().includes(q) || 
+                            b.phone.includes(q) || 
+                            b.booking_code.toLowerCase().includes(q);
+        const matchStatus = st === 'all' || b.status === st;
+        const matchDate = !dt || b.booking_date === dt;
+        return matchSearch && matchStatus && matchDate;
+      });
+
+      renderBookings(filtered);
+    }
+
+    // Update Status
+    async function updateStatus(id, newStatus) {
+      try {
+        const res = await fetch(`/api/bookings/${id}/status`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: newStatus })
+        });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message);
+          loadAllData();
+        }
+      } catch (err) {
+        alert('Lỗi cập nhật trạng thái');
+      }
+    }
+
+    // Delete Booking
+    async function deleteBooking(id) {
+      if (!confirm('Bạn có chắc chắn muốn xóa đơn đặt bàn này?')) return;
+      try {
+        const res = await fetch(`/api/bookings/${id}`, { method: 'DELETE' });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message);
+          loadAllData();
+        }
+      } catch (err) {
+        alert('Lỗi xóa đơn');
+      }
+    }
+
+    // Load Menu
+    async function loadMenu() {
+      try {
+        const res = await fetch('/api/menu?available=0');
+        const json = await res.json();
+        if (json.success) {
+          allMenuItems = json.data;
+          renderMenu();
+        }
+      } catch (err) {
+        console.error('Lỗi tải menu:', err);
+      }
+    }
+
+    // Render Menu Grid
+    function renderMenu() {
+      const q = (document.getElementById('search-menu')?.value || '').toLowerCase();
+      const cat = document.getElementById('filter-category')?.value || 'all';
+
+      const filtered = allMenuItems.filter(m => {
+        const matchSearch = m.name.toLowerCase().includes(q) || m.code.toLowerCase().includes(q);
+        const matchCat = cat === 'all' || m.category === cat;
+        return matchSearch && matchCat;
+      });
+
+      const container = document.getElementById('menu-grid-container');
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-muted); grid-column: 1/-1; text-align: center; padding: 2rem;">Không tìm thấy món ăn nào.</p>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(m => `
+        <div class="menu-card">
+          <img src="/${m.image_url}" class="menu-card-img" alt="${m.name}" onerror="this.src='/img/gallery/gallery-2.jpg'">
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <div class="menu-item-name">${m.name}</div>
+              <div class="menu-item-price">${Number(m.price).toLocaleString('vi-VN')}₫</div>
+            </div>
+            <p class="menu-item-desc">${m.description}</p>
+            <div class="menu-card-footer">
+              <span class="badge ${m.is_available ? 'badge-confirmed' : 'badge-cancelled'}">
+                ${m.is_available ? '● Đang phục vụ' : '○ Tạm hết món'}
+              </span>
+              <div class="action-btns">
+                <button class="btn-sm btn-confirm" onclick="toggleMenu(${m.id})">
+                  ${m.is_available ? 'Báo hết' : 'Bật lại'}
+                </button>
+                <button class="btn-sm btn-del" onclick="deleteMenuItem(${m.id})">Xóa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function toggleMenu(id) {
+      await fetch(`/api/menu/${id}/toggle-availability`, { method: 'PATCH' });
+      showToast('Đã đổi trạng thái món');
+      loadMenu();
+    }
+
+    async function deleteMenuItem(id) {
+      if (!confirm('Xóa món này khỏi thực đơn?')) return;
+      await fetch(`/api/menu/${id}`, { method: 'DELETE' });
+      showToast('Đã xóa món');
+      loadMenu();
+    }
+
+    // Modal Add Menu
+    function openAddMenuModal() {
+      document.getElementById('modal-add-menu').classList.add('show');
+    }
+    function closeAddMenuModal() {
+      document.getElementById('modal-add-menu').classList.remove('show');
+    }
+
+    async function submitNewMenuItem(e) {
+      e.preventDefault();
+      const payload = {
+        name: document.getElementById('menu-name').value,
+        category: document.getElementById('menu-cat').value,
+        price: parseInt(document.getElementById('menu-price').value),
+        description: document.getElementById('menu-desc').value,
+      };
+
+      const res = await fetch('/api/menu', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const json = await res.json();
+      if (json.success) {
+        showToast('Đã thêm món mới vào thực đơn!');
+        closeAddMenuModal();
+        document.getElementById('form-add-menu').reset();
+        loadMenu();
+      }
+    }
+
+    // Load Reviews
+    async function loadReviews() {
+      try {
+        const res = await fetch('/api/reviews');
+        const json = await res.json();
+        if (json.success) {
+          allReviews = json.data;
+          const tbody = document.getElementById('reviews-table-body');
+          tbody.innerHTML = allReviews.map(r => `
+            <tr>
+              <td><strong>${r.customer_name}</strong></td>
+              <td><span style="color: #eab308; font-size: 1.1rem;">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span></td>
+              <td><span style="color: #fca5a5;">${r.dish_name || 'Bít tết'}</span></td>
+              <td>${r.comment}</td>
+              <td style="color: var(--text-muted); font-size: 0.8rem;">${r.created_at}</td>
+            </tr>
+          `).join('');
+        }
+      } catch (err) {
+        console.error('Lỗi tải reviews:', err);
+      }
+    }
+
+    // Master Refresh
+    function loadAllData() {
+      loadStats();
+      loadBookings();
+    }
+
+    // Init
+    loadAllData();
+  </script>
+</body>
+</html>

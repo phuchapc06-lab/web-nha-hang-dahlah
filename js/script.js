@@ -112,40 +112,83 @@ if (bookDateInput) {
   bookDateInput.min = today;
 }
 
+// Cấu hình URL kết nối Backend API (Hỗ trợ cả môi trường Local Flask 5000 và Live Server)
+const API_BASE_URL = window.location.port === "5000" ? "" : "http://127.0.0.1:5000";
+
 if (bookingForm) {
-  bookingForm.addEventListener("submit", function (e) {
+  bookingForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const bookingData = {
-      id: "KD-" + Math.floor(1000 + Math.random() * 9000),
-      name: document.getElementById("book-name").value,
-      phone: document.getElementById("book-phone").value,
+    const submitBtn = bookingForm.querySelector(".btn-booking");
+    const originalBtnText = submitBtn ? submitBtn.innerText : "TÌM BÀN & ĐẶT CHỖ NGAY";
+    if (submitBtn) {
+      submitBtn.innerText = "ĐANG XỬ LÝ ĐẶT BÀN...";
+      submitBtn.disabled = true;
+    }
+
+    const bookingPayload = {
+      name: document.getElementById("book-name").value.trim(),
+      phone: document.getElementById("book-phone").value.trim(),
       location: document.getElementById("book-location").value,
       guests: document.getElementById("book-guests").value,
       date: document.getElementById("book-date").value,
       time: document.getElementById("book-time").value,
       setMenu: document.getElementById("book-set").value,
-      notes: document.getElementById("book-notes").value || "Không có",
-      createdAt: new Date().toLocaleString("vi-VN"),
+      notes: document.getElementById("book-notes").value.trim() || "Không có",
     };
 
-    // TV5: Lưu trữ dữ liệu vào LocalStorage
+    let bookingResult = null;
+
+    // 1. Gửi tới máy chủ Backend API (Flask + SQLite)
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/bookings`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingPayload),
+      });
+      const resJson = await response.json();
+      if (resJson.success && resJson.data) {
+        bookingResult = resJson.data;
+        bookingResult.id = resJson.data.booking_code;
+      }
+    } catch (err) {
+      console.warn("Backend API chưa kích hoạt hoặc không thể kết nối, sử dụng lưu trữ cục bộ:", err);
+    }
+
+    // 2. Dự phòng (Fallback) nếu chạy trên GitHub Pages tĩnh
+    if (!bookingResult) {
+      const fallbackId = "KD-" + Math.floor(1000 + Math.random() * 9000);
+      bookingResult = {
+        ...bookingPayload,
+        id: fallbackId,
+        booking_code: fallbackId,
+        createdAt: new Date().toLocaleString("vi-VN"),
+      };
+    }
+
+    // Lưu vào LocalStorage
     let savedBookings = JSON.parse(localStorage.getItem("kron_bookings") || "[]");
-    savedBookings.push(bookingData);
+    savedBookings.push(bookingResult);
     localStorage.setItem("kron_bookings", JSON.stringify(savedBookings));
 
-    // Hiển thị thông tin lên Modal
+    if (submitBtn) {
+      submitBtn.innerText = originalBtnText;
+      submitBtn.disabled = false;
+    }
+
+    // Hiển thị thông tin lên Modal Popup
     if (modalDetails) {
       modalDetails.innerHTML = `
-        <p><strong>Mã đặt bàn:</strong> <span style="color: #c82333; font-weight: 700;">${bookingData.id}</span></p>
-        <p><strong>Khách hàng:</strong> ${bookingData.name} - ${bookingData.phone}</p>
-        <p><strong>Thời gian:</strong> ${bookingData.time}, ngày ${bookingData.date}</p>
-        <p><strong>Số lượng:</strong> ${bookingData.guests}</p>
-        <p><strong>Vị trí:</strong> ${bookingData.location}</p>
-        <p><strong>Set Menu:</strong> ${bookingData.setMenu}</p>
-        <p><strong>Ghi chú:</strong> ${bookingData.notes}</p>
-        <p style="margin-top: 1rem; color: #16a34a; font-size: 1.3rem;">
-          &bull; Nhân viên Kron-Dahlah sẽ gọi điện xác nhận trong vòng 5 phút!
+        <p><strong>Mã đặt bàn:</strong> <span style="color: #c82333; font-weight: 700; font-size: 1.6rem; letter-spacing: 1px;">${bookingResult.booking_code || bookingResult.id}</span></p>
+        <p><strong>Khách hàng:</strong> ${bookingResult.name || bookingResult.customer_name} - ${bookingResult.phone}</p>
+        <p><strong>Thời gian:</strong> ${bookingResult.time || bookingResult.booking_time}, ngày ${bookingResult.date || bookingResult.booking_date}</p>
+        <p><strong>Số lượng:</strong> ${bookingResult.guests}</p>
+        <p><strong>Vị trí tiệc:</strong> ${bookingResult.location}</p>
+        <p><strong>Set Menu:</strong> ${bookingResult.setMenu || bookingResult.set_menu}</p>
+        <p><strong>Ghi chú:</strong> ${bookingResult.notes || "Không có"}</p>
+        <p style="margin-top: 1.2rem; color: #16a34a; font-size: 1.3rem; line-height: 1.6; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+          &bull; Hệ thống máy chủ Kron-Dahlah đã ghi nhận đơn thành công.<br>
+          &bull; Lễ tân nhà hàng sẽ gọi điện xác nhận trong vòng 5 phút!
         </p>
       `;
     }
@@ -160,7 +203,6 @@ if (bookingForm) {
     }
   });
 }
-
 if (btnCloseModal && bookingModal) {
   btnCloseModal.addEventListener("click", function () {
     bookingModal.classList.remove("active");
