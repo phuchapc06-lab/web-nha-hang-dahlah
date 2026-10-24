@@ -1612,3 +1612,111 @@ body.sticky .header {
 .booking-card.highlight-focus {
   animation: highlight-glow 2s ease-out;
 }
+
+
+/* ==========================================================================
+   INTERACTIVE MENU SYSTEM & SMOOTH TRANSITIONS
+   ========================================================================== */
+.clickable-category {
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.clickable-category:hover,
+.clickable-category.active-category {
+  background-color: #fee2e2;
+  color: #991b1b !important;
+  font-weight: 700;
+  transform: translateX(8px);
+}
+
+.clickable-category:hover .list-icon,
+.clickable-category.active-category .list-icon {
+  color: #991b1b !important;
+  transform: scale(1.25);
+}
+
+.meal-animating {
+  animation: fadeSlideUp 0.35s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0.2;
+    transform: translateY(14px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.btn-select-meal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 1.1rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #991b1b;
+  background-color: #fff1f2;
+  border: 1.5px solid #fecdd3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.btn-select-meal:hover {
+  background-color: #991b1b;
+  color: #ffffff;
+  border-color: #991b1b;
+  box-shadow: 0 4px 14px rgba(153, 27, 27, 0.25);
+  transform: translateY(-2px);
+}
+
+.menu-subnav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.menu-subnav-btn {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.8rem;
+}
+
+.menu-subnav-btn:hover:not(:disabled) {
+  background: #991b1b;
+  color: #ffffff;
+  border-color: #991b1b;
+}
+
+.menu-subnav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.menu-subnav-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #64748b;
+}

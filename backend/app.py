@@ -235,8 +235,12 @@ def get_menu():
     params = []
 
     if category and category != 'all':
-        query += " AND category = ?"
-        params.append(category)
+        if category in ['wine', 'dessert']:
+            query += " AND (category = 'wine' OR category = 'dessert')"
+        else:
+            query += " AND category = ?"
+            params.append(category)
+
     if only_available:
         query += " AND is_available = 1"
 
@@ -248,7 +252,80 @@ def get_menu():
     rows = cursor.fetchall()
     conn.close()
 
-    items = [dict(row) for row in rows]
+    items = []
+    for row in rows:
+        item = dict(row)
+        price = item['price']
+        
+        # Thiết lập giảm giá và giá gốc giả định khuyến mãi
+        if item['code'] == 'MN-01':
+            discount_pct = 15
+            orig_price = 565000
+            tags = ['Bán chạy nhất', 'Signature']
+            attr1 = 'Bò Wagyu thượng hạng vân mỡ MB5+'
+            attr2 = 'Sốt tiêu đen Phú Quốc & Sốt Truffle'
+            reviews_count = 1250
+        elif item['code'] == 'MN-07B':
+            discount_pct = 20
+            orig_price = 450000
+            tags = ['Đặc sản Bếp trưởng', 'Fine Dining']
+            attr1 = 'Tôm hùm baby & Phô mai Parmigiano 24M'
+            attr2 = 'Sợi mỳ thủ công sốt kem nấm Truffle Ý'
+            reviews_count = 980
+        elif item['category'] == 'combo':
+            discount_pct = 15 if 'Romance' in item['name'] else 17
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Combo Lãng Mạn', 'Tặng Nến Hoa'] if 'Romance' in item['name'] else ['Đại Tiệc VIP', 'Hoàng Gia']
+            attr1 = '02 Bít tết Bò Mỹ & 02 Súp nấm Truffle' if 'Romance' in item['name'] else 'Bò Wagyu, Tôm hùm nướng & Cold Cuts'
+            attr2 = '02 Ly vang Chile & Decor nến hoa' if 'Romance' in item['name'] else '02 Chai vang Bordeaux & 4 Panna Cotta'
+            reviews_count = 1450 if 'Romance' in item['name'] else 890
+        elif item['category'] == 'steak':
+            discount_pct = 15 if item['code'] == 'MN-02' else 10
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Bò Mỹ Cao Cấp', 'Mọng Nước']
+            attr1 = 'Thịt thăn lưng bò đen Mỹ ngập nước' if 'Ribeye' in item['name'] else 'Thăn lõi vai bò Mỹ đậm đà sốt tiêu'
+            attr2 = 'Măng tây áp chảo & khoai tây nghiền'
+            reviews_count = 850
+        elif item['category'] == 'seafood':
+            discount_pct = 20 if 'Tôm Hùm' in item['name'] else 15
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Hải Sản Thượng Hạng', 'Fine Dining']
+            attr1 = 'Tôm hùm phô mai Mozzarella đút lò' if 'Tôm Hùm' in item['name'] else 'Cá hồi Na Uy sốt bơ chanh vàng'
+            attr2 = 'Thảo mộc Rosemary & Xà lách hữu cơ'
+            reviews_count = 1120
+        elif item['category'] == 'pasta':
+            discount_pct = 15
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Mỳ Ý Thủ Công', 'Fine Dining']
+            attr1 = 'Cua tuyết ngọt mềm & Sợi Fettuccine tươi'
+            attr2 = 'Sốt kem béo ngậy nấm Truffle đen'
+            reviews_count = 760
+        elif item['category'] == 'wine':
+            discount_pct = 17 if 'Chai' in item['name'] else 15
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Vang Pháp Thượng Hạng', 'Grand Cru'] if 'Chai' in item['name'] else ['Vang Chile', 'Theo Ly']
+            attr1 = 'Vùng Bordeaux trứ danh, ủ thùng sồi Pháp' if 'Chai' in item['name'] else 'Vang Chile Cabernet Sauvignon đậm đà'
+            attr2 = 'Hương quả mọng chín sâu lắng, chuẩn vị Steak'
+            reviews_count = 650
+        else: # dessert, starter
+            discount_pct = 15 if 'Tiramisu' in item['name'] else 10
+            orig_price = int(price * (1 + discount_pct / 100) // 1000 * 1000)
+            tags = ['Tráng Miệng Pháp/Ý', 'Handmade'] if item['category'] == 'dessert' else ['Khai Vị Tinh Tế', 'Healthy']
+            attr1 = 'Mascarpone & Cà phê Espresso Ý' if 'Tiramisu' in item['name'] else 'Nguyên liệu nhập khẩu Âu tươi ngon'
+            attr2 = 'Bột Cacao nguyên chất & Rượu Kahlua' if 'Tiramisu' in item['name'] else 'Bánh mỳ bơ tỏi & Nấm rừng thơm lừng'
+            reviews_count = 780
+
+        item['original_price'] = orig_price
+        item['discount_badge'] = f"-{discount_pct}%"
+        item['tags'] = tags
+        item['attr1'] = attr1
+        item['attr2'] = attr2
+        item['reviews_count'] = reviews_count
+        item['formatted_price'] = f"{price:,.0f}₫".replace(',', '.')
+        item['formatted_original_price'] = f"{orig_price:,.0f}₫".replace(',', '.')
+
+        items.append(item)
+
     return jsonify({"success": True, "count": len(items), "data": items})
 
 @app.route('/api/menu', methods=['POST'])

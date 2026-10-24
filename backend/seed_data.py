@@ -14,13 +14,13 @@ def seed_all():
     # 1. Seed Menu Items
     menu_items = [
         # Bò Bít tết Thượng hạng
-        ('MN-01', 'Thăn Bò Bít Tết Wagyu Úc MB5+', 'steak', 680000, 
+        ('MN-01', 'Thăn Bò Bít Tết Wagyu Úc (Striploin)', 'steak', 480000, 
          'Vân mỡ cẩm thạch tuyệt hảo đạt chuẩn MB5+, nướng than hoa thơm lừng kèm bơ thảo mộc và sốt nấm Truffle đen.',
          'img/dishes/steak_wagyu.jpg', 1, 1, 620, 88, 4.9),
-        ('MN-02', 'Thăn Bò Black Angus Ribeye 300g', 'steak', 520000, 
+        ('MN-02', 'Thăn Bò Black Angus Ribeye 300g', 'steak', 420000, 
          'Thịt thăn lưng bò đen Mỹ mềm mọng ngập nước, phục vụ cùng măng tây áp chảo và khoai tây nghiền bơ tỏi.',
          'img/dishes/steak_ribeye.jpg', 1, 1, 580, 85, 4.8),
-        ('MN-03', 'Bít Tết Bò Mỹ Top Blade Sốt Tiêu Đen', 'steak', 390000, 
+        ('MN-03', 'Bít Tết Bò Mỹ Top Blade Sốt Tiêu Đen', 'steak', 350000, 
          'Thăn lõi vai bò Mỹ đậm đà, vị cay nồng quyến rũ của hạt tiêu Phú Quốc ngâm rượu vang đỏ.',
          'img/dishes/steak_topblade.jpg', 0, 1, 540, 82, 4.8),
 
@@ -31,7 +31,7 @@ def seed_all():
         ('MN-05', 'Đĩa Cold Cuts & Phô Mai Nhập Khẩu Âu', 'starter', 320000, 
          'Thịt nguội Iberico trứ danh, xúc xích Salami và 3 loại phô mai Brie, Camembert, Cheddar ăn kèm oliu và nho khô.',
          'img/dishes/cold_cuts.jpg', 0, 1, 450, 78, 4.7),
-        ('MN-06', 'Salad Cá Hồi Xông Khói Sốt Chanh Leo', 'starter', 195000, 
+        ('MN-06', 'Salad Cá Hồi Na Uy Xông Khói & Trứng Lòng Đào', 'starter', 195000, 
          'Cá hồi Na Uy xông khói gỗ sồi, xà lách tươi hữu cơ Đà Lạt cùng sốt chanh leo chua ngọt thanh mát.',
          'img/dishes/salad_salmon.jpg', 0, 1, 310, 92, 4.8),
 
@@ -39,23 +39,29 @@ def seed_all():
         ('MN-07', 'Mỳ Ý Cua Tuyết Sốt Kem Nấm Truffle', 'pasta', 285000, 
          'Sợi mỳ dẹt Fettuccine làm thủ công trong ngày quyện sốt kem phô mai béo thơm và thịt cua tuyết ngọt mềm.',
          'img/dishes/pasta_crab.jpg', 1, 1, 530, 80, 4.9),
-        ('MN-08', 'Tôm Hùm Bỏ Lò Phô Mai Mozzarella', 'seafood', 750000, 
+        ('MN-07B', 'Mỳ Ý Tôm Hùm Sốt Kem Truffle', 'pasta', 360000, 
+         'Tôm hùm baby & Phô mai Parmigiano 24M, sợi mỳ thủ công sốt kem nấm Truffle Ý thượng hạng.',
+         'img/dishes/lobster_cheese.jpg', 1, 1, 560, 84, 4.9),
+        ('MN-08', 'Tôm Hùm Bỏ Lò Phô Mai Mozzarella', 'seafood', 550000, 
          'Nửa con tôm hùm bông tươi nướng đút lò phủ ngập phô mai béo ngậy, thảo mộc Rosemary thơm nức.',
          'img/dishes/lobster_cheese.jpg', 1, 1, 490, 86, 5.0),
+        ('MN-08B', 'Cá Hồi Na Uy Áp Chảo Sốt Bơ Chanh', 'seafood', 260000, 
+         'Phi lê cá hồi Na Uy da giòn thịt ngọt mềm, phục vụ cùng sốt bơ chanh vàng và măng tây áp chảo.',
+         'img/dishes/salad_salmon.jpg', 1, 1, 420, 88, 4.8),
 
         # Tráng Miệng Hoàng Gia (Dessert)
-        ('MN-09', 'Bánh Tiramisu Truyền Thống Nước Ý', 'dessert', 120000, 
+        ('MN-09', 'Bánh Tiramisu Ý Truyền Thống', 'dessert', 95000, 
          'Bánh phô mai Mascarpone thơm ngát cà phê Espresso thượng hạng và rượu Kahlua quyến rũ.',
          'img/dishes/dessert_tiramisu.jpg', 0, 1, 350, 70, 4.9),
-        ('MN-10', 'Panna Cotta Dâu Tây Rừng & Vani Madagascar', 'dessert', 95000, 
+        ('MN-10', 'Panna Cotta Dâu Tây Rừng & Vani Madagascar', 'dessert', 85000, 
          'Món tráng miệng mềm mịn tan trong miệng ăn kèm mứt dâu tây rừng tươi nguyên chất.',
          'img/dishes/dessert_pannacotta.jpg', 0, 1, 260, 75, 4.8),
 
         # Bộ Sưu Tập Rượu Vang Châu Âu (Wine)
-        ('MN-11', 'Vang Đỏ Bordeaux Château Cao Cấp (Chai)', 'wine', 1650000, 
+        ('MN-11', 'Vang Đỏ Bordeaux Château Cao Cấp (Chai)', 'wine', 1250000, 
          'Dòng vang Pháp đậm đà nồng nàn hương gỗ sồi và quả mọng đen chín, lý tưởng khi dùng cùng bít tết Wagyu.',
          'img/dishes/wine_bordeaux.jpg', 1, 1, 150, 65, 4.9),
-        ('MN-12', 'Vang Đỏ Chile Cabernet Sauvignon (Ly)', 'wine', 180000, 
+        ('MN-12', 'Vang Đỏ Chile Cabernet Sauvignon (Ly)', 'wine', 150000, 
          'Vị chát êm dịu, hậu vị trái cây ngọt ngào, kết hợp hoàn hảo cùng bữa tối hẹn hò.',
          'img/dishes/wine_glass.jpg', 0, 1, 130, 68, 4.8),
 

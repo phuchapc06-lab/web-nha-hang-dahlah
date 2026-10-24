@@ -192,115 +192,116 @@
           </div>
         </div>
 
-        <div class="container grid grid--3-cols margin-bottom-md">
+        <div class="container grid grid--3-cols margin-bottom-md" id="menu-showcase-grid">
           <!-- Món 1 -->
-          <div class="meal">
-            <div class="discount-badge">-15%</div>
+          <div class="meal" id="meal-card-1">
+            <div class="discount-badge" id="meal-1-badge">-15%</div>
             <img
-              src="img/meals/meal-1.jpg"
+              src="img/dishes/steak_wagyu.jpg"
               class="meal-img"
+              id="meal-1-img"
               alt="Bò Bít Tết Thăn Ngoại Wagyu Úc"
               width="700"
             />
             <div class="meal-content">
-              <div class="meal-tags">
+              <div class="meal-tags" id="meal-1-tags">
                 <span class="tag tag--vegetarian">Bán chạy nhất</span>
                 <span class="tag tag--paleo">Signature</span>
               </div>
-              <p class="meal-title">Thăn Bò Bít Tết Wagyu Úc (Striploin)</p>
+              <p class="meal-title" id="meal-1-title">Thăn Bò Bít Tết Wagyu Úc (Striploin)</p>
               <ul class="meal-attributes">
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                  <span>Bò Wagyu thượng hạng <strong>vân mỡ MB5+</strong></span>
+                  <span id="meal-1-attr1">Bò Wagyu thượng hạng <strong>vân mỡ MB5+</strong></span>
                 </li>
                 <li class="meal-attribute">
-                  <ion-icon
-                    class="meal-icon"
-                    name="restaurant-outline"
-                  ></ion-icon>
-                  <span>Sốt tiêu đen Phú Quốc &amp; Sốt Truffle</span>
+                  <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                  <span id="meal-1-attr2">Sốt tiêu đen Phú Quốc &amp; Sốt Truffle</span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                  <span><strong>4.9</strong> rating (1.250 đánh giá)</span>
+                  <span id="meal-1-attr3"><strong>4.9</strong> rating (1.250 đánh giá)</span>
                 </li>
               </ul>
               <div style="margin-top: 1.6rem; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;">480.000₫</span>
-                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;">565.000₫</span>
+                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;" id="meal-1-price">480.000₫</span>
+                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;" id="meal-1-orig-price">565.000₫</span>
               </div>
+              <button class="btn-select-meal" id="meal-1-btn" onclick="selectDishForReservation(0)">
+                <ion-icon name="calendar-outline"></ion-icon> Đặt bàn với món này &rarr;
+              </button>
             </div>
           </div>
 
           <!-- Món 2 -->
-          <div class="meal">
-            <div class="discount-badge">-20%</div>
-            <img src="img/meals/meal-2.jpg" class="meal-img" alt="Mỳ Ý Tôm Hùm Sốt Truffle" />
+          <div class="meal" id="meal-card-2">
+            <div class="discount-badge" id="meal-2-badge">-20%</div>
+            <img src="img/dishes/lobster_cheese.jpg" class="meal-img" id="meal-2-img" alt="Mỳ Ý Tôm Hùm Sốt Truffle" />
             <div class="meal-content">
-              <div class="meal-tags">
+              <div class="meal-tags" id="meal-2-tags">
                 <span class="tag tag--vegan">Đặc sản Bếp trưởng</span>
                 <span class="tag tag--paleo">Fine Dining</span>
               </div>
-              <p class="meal-title">Mỳ Ý Tôm Hùm Sốt Kem Truffle</p>
+              <p class="meal-title" id="meal-2-title">Mỳ Ý Tôm Hùm Sốt Kem Truffle</p>
               <ul class="meal-attributes">
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
-                  <span>Tôm hùm baby &amp; Phô mai <strong>Parmigiano 24M</strong></span>
+                  <span id="meal-2-attr1">Tôm hùm baby &amp; Phô mai <strong>Parmigiano 24M</strong></span>
                 </li>
                 <li class="meal-attribute">
-                  <ion-icon
-                    class="meal-icon"
-                    name="restaurant-outline"
-                  ></ion-icon>
-                  <span>Sợi mỳ thủ công sốt kem nấm Truffle Ý</span>
+                  <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                  <span id="meal-2-attr2">Sợi mỳ thủ công sốt kem nấm Truffle Ý</span>
                 </li>
                 <li class="meal-attribute">
                   <ion-icon class="meal-icon" name="star-outline"></ion-icon>
-                  <span><strong>4.9</strong> rating (980 đánh giá)</span>
+                  <span id="meal-2-attr3"><strong>4.9</strong> rating (980 đánh giá)</span>
                 </li>
               </ul>
               <div style="margin-top: 1.6rem; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;">360.000₫</span>
-                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;">450.000₫</span>
+                <span style="font-size: 2.2rem; font-weight: 800; color: #c82333;" id="meal-2-price">360.000₫</span>
+                <span style="font-size: 1.4rem; color: #94a3b8; text-decoration: line-through;" id="meal-2-orig-price">450.000₫</span>
               </div>
+              <button class="btn-select-meal" id="meal-2-btn" onclick="selectDishForReservation(1)">
+                <ion-icon name="calendar-outline"></ion-icon> Đặt bàn với món này &rarr;
+              </button>
             </div>
           </div>
 
           <!-- Danh mục thực đơn -->
           <div class="diets">
             <h3 class="heading-tertiary">Danh mục món ăn tại Kron-Dahlah:</h3>
-            <ul class="list">
-              <li class="list-item">
+            <ul class="list" id="category-filter-list">
+              <li class="list-item clickable-category" data-filter="starter" title="Bấm để xem các món Khai vị">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
                 <span>Khai vị: Súp bí đỏ bơ tỏi, Salad cá hồi</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="steak" title="Bấm để xem Bít tết bò Mỹ &amp; Wagyu">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
                 <span>Bít tết bò Mỹ &amp; Wagyu Úc thượng hạng</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="seafood" title="Bấm để xem Hải sản Âu">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Hải sản Âu: Cá hồi Na Uy áp chảo sốt bơ chanh</span>
+                <span>Hải sản Âu: Tôm hùm bỏ lò &amp; Cá hồi áp chảo</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="pasta" title="Bấm để xem Mỳ &amp; Cơm Ý">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
                 <span>Mỳ &amp; Cơm Ý: Truffle Spaghetti, Risotto hải sản</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="combo" title="Bấm để xem Set Combo tiệc">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Sườn cừu New Zealand nướng thảo mộc</span>
+                <span>Set Combo tiệc: Set Romance &amp; Set Royal VIP</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="starter" title="Bấm để xem Cold Cuts &amp; Món chay">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Món chay kiểu Âu (Vegetarian European)</span>
+                <span>Cold Cuts &amp; Phô mai nhập khẩu Âu</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="wine" title="Bấm để xem Tráng miệng Pháp/Ý">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Tráng miệng Pháp: Tiramisu, Crème Brûlée</span>
+                <span>Tráng miệng Pháp &amp; Ý: Tiramisu, Panna Cotta</span>
               </li>
-              <li class="list-item">
+              <li class="list-item clickable-category" data-filter="wine" title="Bấm để xem Bộ sưu tập Rượu vang">
                 <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
-                <span>Bộ sưu tập rượu vang Pháp, Ý, Chile cao cấp</span>
+                <span>Bộ sưu tập rượu vang Pháp, Chile cao cấp</span>
               </li>
             </ul>
           </div>
